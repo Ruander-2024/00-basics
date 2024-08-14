@@ -1,0 +1,26 @@
+{
+    "name": "frontend-05-advanced-javascript",
+    "version": "1.0.0",
+    "description": "Javascript algorythm practises",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PROGmasters-Ujratervezes/frontend-05-advanced-javascript.git"
+    },
+    "author": "Progmasteres Bakoczy Zoltán és Fort Zsuzsanna",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/PROGmasters-Ujratervezes/frontend-05-advanced-javascript/issues"
+    },
+    "homepage": "https://github.com/PROGmasters-Ujratervezes/frontend-05-advanced-javascript#readme",
+    "devDependencies": {
+        "jest": "^27.3.1"
+    },
+    "jest": {
+        "verbose": true,
+        "testURL": "http://localhost"
+    }
+}
