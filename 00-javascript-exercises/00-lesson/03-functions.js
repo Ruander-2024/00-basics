@@ -20,7 +20,7 @@ const BASE_URL = "https";
 function sendDataToServer() {
     function name() {
         console.log(BASE_URL, "sent");
-        console.log(’${BASE_URL} sent’);  
+        console.log(`${BASE_URL} sent`); 
     }
     name();
 }
