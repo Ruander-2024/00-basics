@@ -72,3 +72,11 @@ console.log(result4);
 
 console.log(5 + 5 + "abc" + 5 + 5 + "def" + 5 + 5);
 //10abc55def55
+
+let stingToNum = "123"
+console.log(stingToNum);
+console.log(Number(stingToNum));
+
+let stingToNum1 = "asd"
+console.log(stingToNum1);
+console.log(Number(stingToNum1));
