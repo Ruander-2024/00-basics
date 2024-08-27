@@ -73,5 +73,11 @@ console.log(result4);
 console.log(5 + 5 + "abc" + 5 + 5 + "def" + 5 + 5);
 //10abc55def55
 
+let stringToNum = "123"
+console.log(stringToNum);
+console.log(Number(stringToNum));
 
+let stringToNum1 = "asd"
+console.log(stringToNum1);
+console.log(Number(stringToNum1));
 
