@@ -57,6 +57,7 @@ else {
 
 //num1 = 10;
 // num2 =-20;
+
 // Or és ANd
 
 if(num1!== 10 || num1 > 0){
@@ -84,3 +85,30 @@ if(num1> 0 && num1 < 20 && num1 < 3){
 if(num1> 0 && num1 < 20 || num1 < 3){
     console.log('Or operator return 6')
 }
+
+//ternary  oprerator
+//condition ? trueExpression : falseExpression
+
+//const result = condition
+//? trueExpression
+//: falseExpression
+
+const score = 80;
+let scoreRating;
+
+if (score > 70){
+    scoreRating = 'Excelent';
+}
+else {
+    scoreRating = 'Do it better';
+}
+
+console.log(scoreRating)
+
+const score2 = 80;
+
+const scoreRating2 = score2 > 70
+    ? "excellent"
+    : "Do it better"
+
+    console.log(scoreRating2)
