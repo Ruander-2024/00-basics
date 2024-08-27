@@ -81,7 +81,7 @@ let stringToNum = "123"
 console.log(stringToNum);
 console.log(Number(stringToNum));
 
-let stringToNum1 = "asd"
+let stringToNum1 = "asdd"
 console.log(stringToNum1);
 console.log(Number(stringToNum1));
 
