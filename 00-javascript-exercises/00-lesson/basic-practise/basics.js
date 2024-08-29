@@ -12,9 +12,19 @@
 
 
 function calculate(type, num1, num2){
-    // TODO
+    if (type === 'add'){
+        return num1 + num2;
+    }
+    else if (type === 'sub'){
+        return num1 - num2;
+    }
+    else if (type === 'divide'){
+        return num1 / num2;
+    }
+    else if (type === 'multi'){
+        return num1 * num2;
+    }
 }
-
 console.log(calculate('add', 30, 50.5)) // 80,5
 console.log(calculate('sub', 30, -21)) // 51
 console.log(calculate('divide', 30, 6)) // 5
@@ -35,6 +45,8 @@ console.log(calculate('multi', 30, 7)) // 210
  * a "calculate" függvény megfelelő helyén
  */
 console.log('---------Második feladat-------');
+
+
 
 console.log(calculate('fault', 30, 30)) // "Invalid operation"
 console.log(calculate('fault', 'dk2', 30)) // "Invalid operation"
