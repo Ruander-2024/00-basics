@@ -118,5 +118,3 @@ let arr2 = null;
 
 console.log(Array.isArray(arr)); // true
 console.log(Array.isArray(arr2)); // false
-
-

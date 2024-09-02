@@ -10,12 +10,10 @@
 
 
 function searchMax(one, two, three) {
-
-    //TODO
-
+    
 }
 
-// console.log(searchMax(10, 2, 10));
+console.log(searchMax(10, 2, 10));
 // console.log(searchMax(17, -10, -45));
 // console.log(searchMax(1115, 510, 440));
 
@@ -34,12 +32,11 @@ function searchMax(one, two, three) {
 //true
 
 function testNumbers(numberOne, numberTwo) {
+ 
+    
+}
 
-    // TODO
-
-};
-
-// console.log(testNumbers(30, 30))
+console.log(testNumbers(30, 30))
 // console.log(testNumbers(20, 60))
 // console.log(testNumbers(20, 20))
 // console.log(testNumbers(20, 30))
