@@ -52,6 +52,31 @@ function mySplice(myArr, num) {
   
     
 }
+// --------------------------- NEGYEDIK FELADAT -------------------------------
+  //
+  // Adott egy számokat tartalmazó tömb, távolítsd el az oda nem illő adatot (stringet) és írj a helyére a kapott számértéket.
+  // Mindig egy, vagy egy sem oda nem illő string van esetünkben.
+  // Ha van benne string, távolitsa el, és adja vissza az eltávolított elemet. 
+  // Ha nincs, akkor adja vissza az eredeti tömböt. Használd a splice metódust.
+  //
+  console.log(mySplice([22, 6, 5, 91, 27], 33));
+  // Output: [22, 6, 5, 91, 27]
+  
+  console.log(mySplice([22, "data", 5, 91, 27], 33));
+  // Output: ["data"]
+  
+  function mySplice(myArr, num) {
+    let string;
+  
+    for (let i = 0; i < myArr.length; i++) {
+      if (isNaN(myArr[i])) {
+        string = myArr[i];
+        myArr.splice(i, 1, num)
+      }
+    }
+  
+    return string || myArr;
+  }
 
 
 // ------------------------------- ÖTÖDIK FELADAT ---------------------------
