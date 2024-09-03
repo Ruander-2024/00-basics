@@ -1,72 +1,38 @@
-//*************************************************** FIRST *************************************************** */
+//-------------------------- ELSŐ FELADAT ------------------------------------------
+// Adott egy tömb, add hozzá a 3 új elemet, majd irasd ki az új tömböt.
+//
+console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
+// Output: ["Nathan Drake", "Chloe Benet", "Sullivan Smith", "Sarah Miller", "Gerald Hugo", "Wong"]
 
-//Írj egy programot, amely megtalálja a legnagyobbbat a paraméterben
-//kapott három szám közül.
-
-//Eredmény:
-//10
-//17
-//1115
-
-
-function searchMax(one, two, three) {
-    return Math.max(one, two, three);
+function myPush(myArr, element1, element2, element3) {
+    myArr.push(element1, element2, element3);
+    return myArr;
 }
 
-console.log(searchMax(10, 2, 10));     // 10
-console.log(searchMax(17, -10, -45));  // 17
-console.log(searchMax(1115, 510, 440)); // 1115
+//-------------------------- MÁSODIK FELADAT ------------------------------------------
+// Adott egy tömb, távolítsd el az utolsó elemét, majd irasd is ki a konzolra.
+//
+console.log(myPop([63, 48, 11, 9, 46, 73, 35]));
+// Output: 35
 
-
-
-//*************************************************** SECOND *************************************************** */
-
-//Írj egy programot, amely true-t ad vissza, ha a két paraméterben
-// kapott szám közül az egyik 30,
-// vagy a két szám összege 40.
-
-//Eredmény:
-//true
-//false
-//true
-//true
-
-function testNumbers(num1, num2) {
-    if (num1 === 30 || num2 === 30 || (num1 + num2) === 40) {
-        return true;
-    } else {
-        return false;
-    }
+function myPop(myArr) {
+  let myPop =  myArr.pop();
+    return myPop;
 }
 
-console.log(testNumbers(30, 30))
- console.log(testNumbers(20, 60))
-console.log(testNumbers(20, 20))
- console.log(testNumbers(20, 30))
+// -------------------------HARMADIK FELADAT ------------------------------
+//
+// Adott egy tömb, irasd ki a tömb felétől a végéig az elemeit.
+//
+// Input: 
+console.log(mySlice(["apple", "banana", "orange", "grape fruit", "melon"]));
+// Output: ["orange", "grape fruit", "melon"]
 
+function mySlice(myArr) {
+    let mySlice = myArr.slice(2,7);
+    return mySlice;
 
-//*************************************************** THIRD *************************************************** */
-
-//Írj egy programot, amely visszaadja a paraméterben kapott szám és 21 különbségét.
-//Ha a kapott szám nagyobb, mint 21, akkor add vissza a különbségük kétszeresét.
-
-//Eredmény:
-//3
-//58
-//0
-
-function difference(number) {
-    if (number > 21) {
-        return (number - 21) * 2;
-    } else {
-        return 21 - number;
-    }
 }
-
-// Példa használat:
-console.log(difference(18));  // 3
-console.log(difference(50));  // 58
-console.log(difference(21));  // 0
 
 
 //*************************************************** FOURTH *************************************************** */
