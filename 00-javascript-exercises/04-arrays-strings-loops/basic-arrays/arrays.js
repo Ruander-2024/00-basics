@@ -1,13 +1,14 @@
 //-------------------------- ELSŐ FELADAT ------------------------------------------
 // Adott egy tömb, add hozzá a 3 új elemet, majd irasd ki az új tömböt.
 //
-// Input: console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
-// Output: ["Nathan Drake", "Chloe Benet", "Sullivan Smith", "Sarah Miller", "Gerald Hugo", "Wong"]
+ //Input: console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
+Output: ["Nathan Drake", "Chloe Benet", "Sullivan Smith", "Sarah Miller", "Gerald Hugo", "Wong"]
 
 function myPush(myArr, element1, element2, element3) {
-
+myArr.push(element1,element2, element3);
+return myPush
 }
-
+console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
 //-------------------------- MÁSODIK FELADAT ------------------------------------------
 // Adott egy tömb, távolítsd el az utolsó elemét, majd irasd is ki a konzolra.
 //
