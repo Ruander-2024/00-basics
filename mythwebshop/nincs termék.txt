@@ -1,0 +1,46 @@
+import noProductsImage from '../../Assets/no-products-found.png';
+
+import React from 'react';
+import HkkNavbar from './hkkNavbar'; 
+import './hkkBoosters.css';
+import all_product from '../../Components/Assets/allProducts';
+import ShopCategory from '../shopChategory';
+import noProductsImage from '../../Components/Assets/DALL·E 2024-08-24 16.24.15 - A fantasy scene of a robbed marketplace. The market is set in a medieval town with cobblestone streets and old, weathered buildings in the background.webp';
+
+const HkkBoosters = () => {
+  const filteredProducts = all_product.filter(item => item.category === "Booster"); 
+
+  return (
+      <div>
+          <HkkNavbar /> {/* Új navigációs menü */}
+          <section className="pop" id="popular">
+              <div className="content">
+                  <h1 className="heading">Népszerű <span>termékek</span></h1>
+                  <div className="box-container">
+                      {filteredProducts.length > 0 ? (
+                          filteredProducts.map((item, i) => (
+                              <div className="box" key={i}>
+                                  <ShopCategory 
+                                      id={item.id} 
+                                      name={item.name} 
+                                      image={item.image} 
+                                      vip_price={item.vip_price} 
+                                      full_price={item.full_price}
+                                  />
+                              </div>
+                          ))
+                      ) : (
+                          <div className="no-products">
+                              <img src={noProductsImage} alt="Nincsenek termékek" />
+                              <h3>Nincsenek elérhető termékek ebben a kategóriában.</h3>
+                          </div>
+                      )}
+                  </div>
+              </div>
+          </section>
+          
+      </div>
+  );
+}
+
+export default HkkBoosters;

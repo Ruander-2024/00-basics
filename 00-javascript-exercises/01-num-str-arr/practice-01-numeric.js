@@ -10,14 +10,12 @@
 
 
 function searchMax(one, two, three) {
-
-    //TODO
-
+    return Math.max(one, two, three);
 }
 
-// console.log(searchMax(10, 2, 10));
-// console.log(searchMax(17, -10, -45));
-// console.log(searchMax(1115, 510, 440));
+console.log(searchMax(10, 2, 10));     // 10
+console.log(searchMax(17, -10, -45));  // 17
+console.log(searchMax(1115, 510, 440)); // 1115
 
 
 
@@ -33,16 +31,18 @@ function searchMax(one, two, three) {
 //true
 //true
 
-function testNumbers(numberOne, numberTwo) {
+function testNumbers(num1, num2) {
+    if (num1 === 30 || num2 === 30 || (num1 + num2) === 40) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-    // TODO
-
-};
-
-// console.log(testNumbers(30, 30))
-// console.log(testNumbers(20, 60))
-// console.log(testNumbers(20, 20))
-// console.log(testNumbers(20, 30))
+console.log(testNumbers(30, 30))
+ console.log(testNumbers(20, 60))
+console.log(testNumbers(20, 20))
+ console.log(testNumbers(20, 30))
 
 
 //*************************************************** THIRD *************************************************** */
@@ -56,14 +56,17 @@ function testNumbers(numberOne, numberTwo) {
 //0
 
 function difference(number) {
+    if (number > 21) {
+        return (number - 21) * 2;
+    } else {
+        return 21 - number;
+    }
+}
 
-    //TODO
-
-};
-
-// console.log(difference(18))
-// console.log(difference(50))
-// console.log(difference(21))
+// Példa használat:
+console.log(difference(18));  // 3
+console.log(difference(50));  // 58
+console.log(difference(21));  // 0
 
 
 //*************************************************** FOURTH *************************************************** */
@@ -79,15 +82,14 @@ function difference(number) {
 
 
 function positiveAndNegative(numberOne, numberTwo) {
-
-    //TODO
+    return (numberOne > 0 && numberTwo < 0) || (numberOne < 0 && numberTwo > 0);
 
 }
 
-// console.log(positiveAndNegative(4, 6));
-// console.log(positiveAndNegative(-4, 6));
-// console.log(positiveAndNegative(6, -4));
-// console.log(positiveAndNegative(-6, -4));
+ console.log(positiveAndNegative(4, 6));
+ console.log(positiveAndNegative(-4, 6));
+ console.log(positiveAndNegative(6, -4));
+ console.log(positiveAndNegative(-6, -4));
 
 //*************************************************** FIFTH *************************************************** */
 
@@ -101,14 +103,15 @@ function positiveAndNegative(numberOne, numberTwo) {
 //true
 //false
 
+   
 function checkNumbers(one, two, three) {
-    //TODO
+    return (one >= 20 && one <= 79) || (two >= 20 && two <= 79) || (three >= 20 && three <= 79);
 }
 
-// console.log(checkNumbers(20, 70, 79));
-// console.log(checkNumbers(5, 66, 199));
-// console.log(checkNumbers(65, 89, 199));
-// console.log(checkNumbers(121, 9, 199));
+ console.log(checkNumbers(20, 70, 79));
+ console.log(checkNumbers(5, 66, 199));
+ console.log(checkNumbers(65, 89, 199));
+ console.log(checkNumbers(121, 9, 199));
 
 
 //*************************************************** SIXTH *************************************************** */
@@ -122,14 +125,22 @@ function checkNumbers(one, two, three) {
 //false
 
 function lastDigit(firstNumber, secondNumber, thirdNumber) {
+    // Ellenőrizzük, hogy mindhárom szám pozitív-e
+    if (firstNumber > 0 && secondNumber > 0 && thirdNumber > 0) {
+        // Ellenőrizzük, hogy az utolsó számjegyük megegyezik-e
+        const lastDigit1 = firstNumber % 10;
+        const lastDigit2 = secondNumber % 10;
+        const lastDigit3 = thirdNumber % 10;
 
-    //TODO
-
+        return lastDigit1 === lastDigit2 && lastDigit1 === lastDigit3;
+    }
+    
+    // Ha bármelyik szám nem pozitív, visszatérünk false értékkel
+    return false;
 }
-
-// console.log(lastDigit(22, 32, 422));
-// console.log(lastDigit(-22, 32, 402));
-// console.log(lastDigit(22, -32, 400));
+console.log(lastDigit(22, 32, 422));
+ console.log(lastDigit(-22, 32, 402));
+ console.log(lastDigit(22, -32, 400));
 
 
 //*************************************************** SEVENTH *************************************************** */
@@ -144,16 +155,15 @@ function lastDigit(firstNumber, secondNumber, thirdNumber) {
 //111.2
 
 function celsiusToFahrenheit(celsius) {
-    //TODO
-
+  
+    return (celsius * 9/5) + 32;
 }
 
 
-
-// console.log(celsiusToFahrenheit(14));
-// console.log(celsiusToFahrenheit(23));
-// console.log(celsiusToFahrenheit(32));
-// console.log(celsiusToFahrenheit(44));
+ console.log(celsiusToFahrenheit(14));
+ console.log(celsiusToFahrenheit(23));
+ console.log(celsiusToFahrenheit(32));
+ console.log(celsiusToFahrenheit(44));
 
 //*************************************************** EIGHTH *************************************************** */
 
@@ -168,14 +178,18 @@ function celsiusToFahrenheit(celsius) {
 // false
 
 function leapyear(year) {
-
-    //TODO
-
+    // Szökőév akkor van, ha az év osztható 4-gyel, de nem osztható 100-zal, kivéve ha osztható 400-zal is
+    if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 
-// console.log(leapyear(2016));
-// console.log(leapyear(2000));
-// console.log(leapyear(1700));
-// console.log(leapyear(1800));
-// console.log(leapyear(100));
+
+console.log(leapyear(2016));
+ console.log(leapyear(2000));
+ console.log(leapyear(1700));
+ console.log(leapyear(1800));
+  console.log(leapyear(100));
