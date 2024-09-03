@@ -1,5 +1,7 @@
 // Alap array (tömb) műveletek
 
+const { compileString } = require("sass");
+
 let myArray = ['Dog', 123, true, {}, []]
 
 console.log(myArray[0]);
@@ -118,3 +120,7 @@ let arr2 = null;
 
 console.log(Array.isArray(arr));  //true
 console.log(Array.isArray(arr2));  // false
+
+
+
+

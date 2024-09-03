@@ -1,5 +1,7 @@
 //*************************************************** FIRST *************************************************** */
 
+const { Logger } = require("sass");
+
 //Írj egy programot, amely megtalálja a legnagyobbbat a paraméterben
 //kapott három szám közül.
 
@@ -8,12 +10,21 @@
 //17
 //1115
 
-
 function searchMax(one, two, three) {
-
-    //TODO
-
+        let max = one;
+        if (two > max){
+            max = two;
+        }else if (three > max){
+            max = three;
+        }
+        return max;
 }
+
+console.log(searchMax(10, 2, 10));
+console.log(searchMax(17, -10, -45));
+console.log(searchMax(1115, 510, 440));
+
+
 
 // console.log(searchMax(10, 2, 10));
 // console.log(searchMax(17, -10, -45));
@@ -34,15 +45,16 @@ function searchMax(one, two, three) {
 //true
 
 function testNumbers(numberOne, numberTwo) {
-
-    // TODO
+   
+    return (numberOne ===30 || numberTwo === 30 || (numberOne + numberTwo) === 40)
 
 };
 
-// console.log(testNumbers(30, 30))
-// console.log(testNumbers(20, 60))
-// console.log(testNumbers(20, 20))
-// console.log(testNumbers(20, 30))
+
+console.log(testNumbers(30, 30))
+console.log(testNumbers(20, 60))
+console.log(testNumbers(20, 20))
+console.log(testNumbers(20, 30))
 
 
 //*************************************************** THIRD *************************************************** */
@@ -56,14 +68,19 @@ function testNumbers(numberOne, numberTwo) {
 //0
 
 function difference(number) {
-
+        if (number > 21){
+            return (number - 21)*2;
+        }
+        else {
+            return (21 - number);
+        }
     //TODO
 
 };
 
-// console.log(difference(18))
-// console.log(difference(50))
-// console.log(difference(21))
+console.log(difference(18))
+console.log(difference(50))
+console.log(difference(21))
 
 
 //*************************************************** FOURTH *************************************************** */
@@ -79,15 +96,19 @@ function difference(number) {
 
 
 function positiveAndNegative(numberOne, numberTwo) {
-
-    //TODO
+        if (numberOne > 0 && numberTwo < 0 || numberOne < 0 && numberTwo > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
 
 }
 
-// console.log(positiveAndNegative(4, 6));
-// console.log(positiveAndNegative(-4, 6));
-// console.log(positiveAndNegative(6, -4));
-// console.log(positiveAndNegative(-6, -4));
+console.log(positiveAndNegative(4, 6));
+console.log(positiveAndNegative(-4, 6));
+console.log(positiveAndNegative(6, -4));
+console.log(positiveAndNegative(-6, -4));
 
 //*************************************************** FIFTH *************************************************** */
 
@@ -101,14 +122,14 @@ function positiveAndNegative(numberOne, numberTwo) {
 //true
 //false
 
-function checkNumbers(one, two, three) {
-    //TODO
+function checkNumbers(one, two, three, four) {
+     return (one >= 20 && one <=79) || (two >= 20 && two <=79) || (three >= 20 && three <=79);
 }
 
-// console.log(checkNumbers(20, 70, 79));
-// console.log(checkNumbers(5, 66, 199));
-// console.log(checkNumbers(65, 89, 199));
-// console.log(checkNumbers(121, 9, 199));
+console.log(checkNumbers(20, 70, 79));
+console.log(checkNumbers(5, 66, 199));
+console.log(checkNumbers(65, 89, 199));
+console.log(checkNumbers(121, 9, 199));
 
 
 //*************************************************** SIXTH *************************************************** */

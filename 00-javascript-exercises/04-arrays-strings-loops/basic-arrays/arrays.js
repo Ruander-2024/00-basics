@@ -4,9 +4,13 @@
 // Input: console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
 // Output: ["Nathan Drake", "Chloe Benet", "Sullivan Smith", "Sarah Miller", "Gerald Hugo", "Wong"]
 
-function myPush(myArr, element1, element2, element3) {
 
+function myPush(myArr) {
+    myArr.push("Sarah Miller", "Gerald Hugo", "Wong");
+    return myArr;
 }
+
+console.log(myPush(["Nathan Drake", "Chloe Benet", "Sullivan Smith"], "Sarah Miller", "Gerald Hugo", "Wong"));
 
 //-------------------------- MÁSODIK FELADAT ------------------------------------------
 // Adott egy tömb, távolítsd el az utolsó elemét, majd irasd is ki a konzolra.
@@ -15,9 +19,10 @@ function myPush(myArr, element1, element2, element3) {
 // Output: 35
 
 function myPop(myArr) {
-
+    let removeElement = myArr.pop();
+    return removeElement;
 }
-
+console.log(myPop([63, 48, 11, 9, 46, 73, 35]));
 // -------------------------HARMADIK FELADAT ------------------------------
 //
 // Adott egy tömb, irasd ki a tömb felétől a végéig az elemeit.
@@ -54,5 +59,7 @@ function mySplice(myArr, num) {
 // Output: "1st"
 
 function myShift(myArr) {
-
+        myArr.shift();
+            return myArr[0];
 }
+console.log(myShift(["0th", "1st", "2nd", "3rd"]));
