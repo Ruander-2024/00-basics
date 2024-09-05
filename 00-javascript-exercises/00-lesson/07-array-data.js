@@ -119,5 +119,56 @@ let arr2 = null;
 console.log(Array.isArray(arr)); // true
 console.log(Array.isArray(arr2)); // false
 
+console.log('----- Hasznos példák -----');
+
+const animals = ['dog', 'cat', 'fox'];
+// console.log(animals.length);
+console.log('Last element: ', animals[animals.length - 1]); // Utolsó elem vizsgálata
+
+console.log(animals[2].charAt(0).toLocaleUpperCase() + animals[2].slice(1)); // Az utolsó elem első karakterének nagy betűssé változtatása
+
+let numArray = [10, 15, 20];
+
+let copyArray = [10, 15, 20];
+
+function formatArray(numArray){
+numArray.push(20); // Elem hozzáadása a tömb végére
+numArray.pop(); // Elem eltávolítása a tömb végéről
+numArray.unshift(20); // Elem beszúrása a tömb elejére
+numArray.splice(1, 1, 4, 5); // Az 1. indexű elemet kitöröltük és hozzáadtunk 2 másikat helyette
+numArray.shift(); // Elem eltávolítása a tömb elejéről
+numArray.join(','); // Összefűzés ',' elválasztással. Csak string-en működik az összefűzés
+console.log(Array.isArray(numArray)); // Megvizsgáljuk, hogy tömböt kapunk e
+
+}
+
+console.log(numArray);
+console.log('Copy', copyArray);
+
+function checkTwoArraysAreSame(arr1, arr2){
+    if((!Array.isArray(arr1) || !Array.isArray(arr2)) || (arr1.length !== arr2.length)) {
+        return false;
+    }
+    else{
+        let areSame = true;
+        for(let i = 0; i < arr1.length; i++){
+            if(arr1[i] !== arr2[i]){
+                areSame = false;
+                break;
+            }
+        }
+        return areSame;
+    }
+}
+
+console.log(checkTwoArraysAreSame(numArray, copyArray));
+console.log(checkTwoArraysAreSame([1, 2, 3], [3, 2, 1]));
+console.log(checkTwoArraysAreSame([1, 2, 3], undefined));
+console.log(checkTwoArraysAreSame([1, 2, 3], [1, 2]));
+console.log(checkTwoArraysAreSame([1, 2, 3], ['1', '2', '3']));
+console.log(checkTwoArraysAreSame(['1', '2', '3'], ['1', '2', '3']));
+
+
+
 
 
