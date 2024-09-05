@@ -166,4 +166,5 @@ console.log(checkTwoArraysAreSame([1, 2, 3], [3, 2, 1]));
 console.log(checkTwoArraysAreSame([1, 2, 3], undefined));
 console.log(checkTwoArraysAreSame([1, 2, 3], [1, 2]));
 console.log(checkTwoArraysAreSame([1, 2, 3], ['1', '2', '3']));
+console.log(checkTwoArraysAreSame(['1', '2', '3'], ['1', '2', '3']));
 
