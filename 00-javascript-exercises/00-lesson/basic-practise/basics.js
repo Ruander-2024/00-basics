@@ -24,7 +24,9 @@ function calculate(type, num1, num2){
     }
     else if(type === 'multi'){
         return num1 * num2;
-    }}
+    }
+}
+
 
 
 console.log(calculate('add', 30, 50.5)) // 80,5
