@@ -38,7 +38,7 @@ for (let i = nums.length - 1 ; i >= 0; i--) {
     // 58, 46, 35, 23, 10
 }
 
-// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben tzalálható értékre
+// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben található értékre
 for (const num of nums) {
     console.log(num);
 }
