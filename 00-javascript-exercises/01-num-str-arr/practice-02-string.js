@@ -1,22 +1,20 @@
 //*************************************************** FIRST *************************************************** */
 
-//Írj meg egy programot, amely a paraméterben kapott számszor adja vissza a paraméterben kapott szót.
+//Írj meg egy programot, amely a paraméterben kapott számszor adja vissza a 
+//paraméterben kapott szót.
 
 function multipleString(word, number) {
-
-  //TODO
-
+  return word.repeat(number);
 };
 
-
-
-// console.log(multipleString("elephant", 3));
-// console.log(multipleString("mouse", 4));
+console.log(multipleString("elephant", 3)); // elephantelephantelephant
+console.log(multipleString("mouse", 4));    // mousemousemousemouse
 
 
 //*************************************************** SECOND *************************************************** */
 
-//Paraméterben kap egy szót és egy betűt. Ha a szó tartalmazza ezt a karaktert, akkor a programod
+//Paraméterben kap egy szót és egy betűt. Ha a szó tartalmazza ezt a karaktert, 
+//akkor a programod
 //adja vissza az indexét. Ha nem tartalmazza, akkor adjon vissza -1-et.
 
 //Eredmény:
@@ -25,17 +23,13 @@ function multipleString(word, number) {
 //-1
 
 function countCharacter(word, char) {
-
-  //TODO
-
+  return word.indexOf(char);
 };
 
-
-
-// console.log(countCharacter("mouse", "m"));
-// console.log(countCharacter("number", "e"));
-// console.log(countCharacter("sunday", "g"));
-
+console.log(countCharacter("mouse", "m"));   // 0
+console.log(countCharacter("number", "e"));  // 4
+console.log(countCharacter("sunday", "g"));  // -1
+  
 
 //*************************************************** THIRD *************************************************** */
 
@@ -49,13 +43,13 @@ function countCharacter(word, char) {
 
 function frontAndBack(word) {
 
-  //TODO
-
+  let firstChar = word.charAt(0);  // Az első karakter kiválasztása
+  return firstChar + word + firstChar;
 };
 
-// console.log(frontAndBack('dog'));
-// console.log(frontAndBack('cat'));
-// console.log(frontAndBack('mouse'));
+console.log(frontAndBack('dog'));   // ddogd
+console.log(frontAndBack('cat'));   // ccatc
+console.log(frontAndBack('mouse')); // mmousem  
 
 
 //*************************************************** FOURTH *************************************************** */
@@ -67,14 +61,17 @@ function frontAndBack(word) {
 //TIPP: Használt a string substring metódusát.
 
 function addThree(word) {
+  if (word.length < 3) {
+    return word;
+  }
 
-  //TODO
+  let lastThree = word.substring(word.length - 3);  // Az utolsó három karakter kiválasztása
+  return lastThree + word + lastThree;
+}
 
-};
-
-// console.log(addThree("abc"));
-// console.log(addThree("ab"));
-// console.log(addThree("abcd"));
+console.log(addThree("abc"));   // abcabcabc
+console.log(addThree("ab"));    // ab
+console.log(addThree("abcd"));  // bcdabcdbcd
 
 
 //*************************************************** FIFTH *************************************************** */
@@ -88,15 +85,17 @@ function addThree(word) {
 
 
 function concatenateStrings(word1, word2) {
+  if (word1.length > 1 && word2.length > 1) {
+    return word1.substring(1) + word2.substring(1);
+  }
+   else {
+    return word1.substring(1) + word2.substring(1);
+  }
+}
 
-  //TODO
-
-};
-
-// console.log(concatenateStrings("dog", "cat"));
-// console.log(concatenateStrings("X", "Y"));
-// console.log(concatenateStrings("we", "me"));
-
+console.log(concatenateStrings("dog", "cat"));  // ogat
+console.log(concatenateStrings("X", "Y"));      // "" (üres string)
+console.log(concatenateStrings("we", "me"));    // ee
 
 //*************************************************** SIXTH *************************************************** */
 
@@ -104,10 +103,12 @@ function concatenateStrings(word1, word2) {
 //A kapott index értéke minden esetben kisebb, mint a szó hossza. 
 
 function findChar(word, index) {
+  return word.charAt(index);
+}
 
-  //TODO
-
-};
+console.log(findChar("Auto", 2));    // t
+console.log(findChar("Printer", 4)); // t
+console.log(findChar("Jaguar", 5));  // r
 
 // console.log(findChar("Auto", 2));
 // console.log(findChar("Printer", 4));
@@ -125,12 +126,18 @@ function findChar(word, index) {
 //3
 
 function countVowels(word) {
+  let vowels = "aeiouAEIOU";  // Kis- és nagybetűs magánhangzók
+  let count = 0;
 
-  //TODO
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      count++;
+    }
+  }
 
+  return count;
 }
 
-
-// console.log(countVowels("Auto"));
-// console.log(countVowels("Printer"));
-// console.log(countVowels("Jaguar"));
+console.log(countVowels("Auto"));    // 3
+console.log(countVowels("Printer")); // 2
+console.log(countVowels("Jaguar"));  // 3
