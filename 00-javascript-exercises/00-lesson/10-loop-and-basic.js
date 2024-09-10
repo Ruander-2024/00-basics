@@ -194,3 +194,39 @@ for (let i = 1; i <= 2; i++) {
     console.log();
 
 }
+
+// -------------------------------
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+for(let i = 5; i >= 1; i--){
+    let line = '';
+    for(let j = 1; j <= i; j++) {
+        line = line + j + ' '; // line += j + ' ';
+    }
+    console.log(line);
+}
+
+console.log();
+
+// -------------------------------
+// 5
+// 4 5
+// 3 4 5
+// 2 3 4 5
+// 1 2 3 4 5
+
+for (let i = 5; i >= 1; i--) {
+    let line = '';
+    for(let j = i; j <= 5; j++){
+        line += j + ' ';
+    }
+    console.log(line);
+    
+}
+
+console.log();
+
