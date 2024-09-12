@@ -96,6 +96,8 @@ console.log(' ---------------- count invalid characters -------------');
 // console.log(countInvalidCahracters('test')); // Output: 0;
 function countInvalidCahracters(str) {}
 
+
+
 console.log(' -------------- remove square from array -----------');
 
 // Készíts egy metódust, ami paraméterként kap egy tömböt és egy számot
