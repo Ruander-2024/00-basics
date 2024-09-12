@@ -1,6 +1,6 @@
 // for ciklusok
 
-for (let i = 0; i <= 5; i++) {
+for(let i = 0; i <= 5; i++) {
     // console.log(i);
     // 0 - 5
 }
@@ -35,43 +35,42 @@ for (let i = 0; i < nums.length; i++) {
 }
 
 for (let i = nums.length - 1; i >= 0; i--) {
-    console.log(nums[i]);
+    // console.log(nums[i]);
     // 58, 46, 35, 23, 10
 }
 
-// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömben található értékre
-for ( const num of nums) {
+// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben található értékre
+for (const num of nums) {
     console.log(num);
 }
 
 // Switch - case
 console.log('Switch - case');
 
-
 function calculate(type, num1, num2){
-   let result;
-   switch(type){
-    case 'add':
-        result = num1 + num2;
-        break;
-    case 'sub':
-        result = num1 - num2;
-        break;
-    case 'multi':
-        result = num1 * num2;
-        break;
-    case 'divide':
-        if(num2 > 0){
-            result = num1 / num2;
-        }
-        else{
-            result = 'Nullával nem lehet osztani!'; 
-        }
-        break;
-    default:
-        result = 'Érvénytelen műveleti típus ' + type;
-   }
-   return result;
+    let result;
+    switch(type){
+        case 'add':
+            result = num1 + num2;
+            break;
+        case 'sub':
+            result = num1 - num2;
+            break;
+        case 'multi':
+            result = num1 * num2;
+            break;
+        case 'divide':
+            if(num2 > 0){
+                result = num1 / num2
+            }
+            else{
+                result = 'Nullával nem lehet osztani!';
+            }
+            break;
+        default:
+            result = 'Érvénytelen műveleti típus: ' + type;
+    }
+    return result;
 }
 
 console.log(calculate('add', 30, 50.5)) // 80,5
@@ -92,15 +91,14 @@ console.log('For ciklus feladatok');
 // 2 kör ...
 // 3 kör ...
 
-for (let i = 0; i <= 3; i++){
+for(let i = 1; i <= 3; i++) {
     console.log(i + '. kör');
-    for(let j = 0; j <= 4; j++){
+    for(let j = 1; j <= 4; j++) {
         console.log(j);
     }
 }
 
 console.log();
-
 
 // 1
 // 123
@@ -111,7 +109,7 @@ for(let i = 1; i <= 3; i++){
     let line = '';
     console.log(i);
     for(let j = 1; j <= 3; j++){
-        line += j;
+        line = line + j; // line += j
     }
     console.log(line);
 }
@@ -124,9 +122,8 @@ console.log();
 
 for(let i = 1; i <= 3; i++){
     let line = '';
-    console.log(i);
     for(let j = 1; j <= i; j++){
-        line += '* '; // line = line + '* ';
+        line = line + '* '; // line += '* '
     }
     console.log(line);
 }
@@ -139,10 +136,10 @@ console.log();
 // 1234
 // 12345
 
-for (let i = 1; i <= 5; i++) {
+for(let i = 1; i <= 5; i++){
     let line = '';
-    for (let j = 1; j <= i; j++) {
-        line += j;
+    for(let j = 1; j <= i; j++){
+    line = line + j; // line += j
     }
     console.log(line);
 }
@@ -155,10 +152,10 @@ console.log();
 // 4444
 // 55555
 
-for (let i = 1; i <= 5; i++) {
+for(let i = 1; i <= 5; i++){
     let line = '';
-    for (let j = 1; j <= i; j++) {
-        line += i;
+    for(let j = 1; j <= i; j++){
+    line = line + i; // line += i
     }
     console.log(line);
 }
@@ -188,11 +185,51 @@ console.log();
 //     2 * 10 = 20
 
 for (let i = 1; i <= 2; i++) {
-    let line = '';
+
     for (let j = 1; j <= 10; j++) {
-        line += `${i} * ${j} = ${i * j}\n`;
+        console.log(i +" * "+ j +" = "+ i * j);
+        //console.log(`${i} * ${j} = ${i*j}`);
+        
+        
+    }
+
+    console.log();
+
+}
+
+// -------------------------------
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+for(let i = 5; i >= 1; i--){
+    let line = '';
+    for(let j = 1; j <= i; j++) {
+        line = line + j + ' '; // line += j + ' ';
     }
     console.log(line);
 }
 
+console.log();
 
+// -------------------------------
+// 5
+// 4 5
+// 3 4 5
+// 2 3 4 5
+// 1 2 3 4 5
+
+for (let i = 5; i >= 1; i--) {
+    let line = '';
+    for(let j = i; j <= 5; j++){
+        line += j + ' ';
+    }
+    console.log(line);
+    
+}
+
+console.log();
+
+console.log(Date.now());

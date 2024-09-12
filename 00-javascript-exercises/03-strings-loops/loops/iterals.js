@@ -1,12 +1,29 @@
+
 console.log(' ---------------- get sum Of Array is even -----------');
 
 // Készíts egy metódust, ami megnézni, hogy egy tömb elemeinek összege páros-e?
 // Adja vissza a megfelelő boolean értéket
 
-// console.log(sumOfArrayIsEven([22, 4, 20, 0, 14])); // Output: true;
-// console.log(sumOfArrayIsEven([9, 11, 11])); // Output: false;
-// console.log(sumOfArrayIsEven([])); //Output:  false;
-function sumOfArrayIsEven(arr) {}
+console.log(sumOfArrayIsEven([22, 4, 20, 0, 14])); // Output: true;
+console.log(sumOfArrayIsEven([9, 11, 11])); // Output: false;
+console.log(sumOfArrayIsEven([])); //Output:  false;
+function sumOfArrayIsEven(arr) {
+    if(arr.length > 0){
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            sum = sum + arr[i]
+        }
+        if(sum % 2 === 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
 
 
 console.log(' ------------------ get even numbers ----------------');
@@ -15,9 +32,31 @@ console.log(' ------------------ get even numbers ----------------');
 // Készíts egy metódust, ami kigyűjti a páros számokat egy tömbből.
 // Térjen vissza csak a páros számokat tartalmazó tömbbel
 
-// console.log(getEvenNumbers([12, 3, 41, 22])); // Output: [12,22];
-// console.log(getEvenNumbers([3, 55, 7])); // Output: [];
-function getEvenNumbers(arr) {}
+console.log(getEvenNumbers([12, 3, 41, 22])); // Output: [12,22];
+console.log(getEvenNumbers([3, 55, 7])); // Output: [];
+function getEvenNumbers(arr) {
+    const evenNumbers = [];
+    
+    for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+    evenNumbers.push(arr[i]);
+    }
+    }
+    
+    return evenNumbers;
+
+    // return arr.filter(num => num % 2 === 0);
+
+    // let newArr = [];
+    // for(const num in arr){
+    //     if(arr[num] % 2 === 0){
+    //         newArr.push(arr[num]);
+    //     }
+    // }
+    // return newArr;
+    }
+
+
 
 console.log(' ---------------------- harmony array ----------- ');
 
@@ -25,17 +64,41 @@ console.log(' ---------------------- harmony array ----------- ');
 // megegyezik a páratlan számok mennyisgével. Ha igen térjen vissza 'in harmony' értékkel.
 // Ellenkező esetben: 'no harmony'
 
-// console.log(isInHarmony([22, 3, 44, 5, 76, 7])); // Output: 'in harmony';
-// console.log(isInHarmony([33, 5, 66, 8, 10])); // Output: 'no harmony';
-function isInHarmony(arr) {}
+console.log(isInHarmony([22, 3, 44, 5, 76, 7])); // Output: 'in harmony';
+console.log(isInHarmony([33, 5, 66, 8, 10])); // Output: 'no harmony';
+function isInHarmony(arr) { // arr(array) - tömb
+    let even = 0; // páros
+    let odds = 0; // páratlan
+
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] % 2 === 0){
+            even++;
+        }
+        else if(arr[i] % 2 !== 0){
+            odds++;
+        }
+    }
+    if(even === odds){
+        return('in harmony');
+    }
+    else{
+        return('no harmony');
+    }
+}
 
 console.log('------------- reverse String --------------');
 
 // Készíts egy metódust, ami visszaadja egy string tükörképét
 
-// console.log(reverseString('andula')); // Output: 'aludna;
-// console.log(reverseString('bar')); // Output: 'rab;
-function reverseString(str) {}
+console.log(reverseString('andula')); // Output: 'aludna;
+console.log(reverseString('bar')); // Output: 'rab;
+function reverseString(str) {
+    let reverseWord = '';
+    for(let i = str.length - 1; i >= 0; i--){
+        reverseWord = reverseWord + str[i] // reverseWord += str[i];
+    }
+    return reverseWord;
+}
 
 console.log(' ---------------- count invalid characters -------------');
 
