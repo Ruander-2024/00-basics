@@ -99,9 +99,13 @@ console.log('For ciklus feladatok');
 // 3
 // 4
 // 3 kör ...
+// 1
+// 2
+// 3
+// 4
 
 for(let i = 1; i <= 3; i++) {
-    console.log(i + '.kör');
+    console.log(i + '. kör');
     for(let j = 1; j <= 4; j++) {
         console.log(j);
     }
@@ -183,14 +187,6 @@ console.log();
 //     1 * 9 = 9
 //     1 * 10 = 10
 
-
-
-
-
-
-
-
-
 //     2 * 1 = 2
 //     2 * 2 = 4
 //     2 * 3 = 6
@@ -202,7 +198,17 @@ console.log();
 //     2 * 9 = 18
 //     2 * 10 = 20
 
+for (let i = 1; i <= 2; i++) {
 
+    for (let j = 1; j <= 10; j++) {
+        console.log(i +" * "+ j +" = "+ i * j);
+        // console.log(`${i} * ${j} * ${i*j}`);  //példa    
+
+    }
+
+    console.log();
+
+}
 
 // -------------------------------
 // 1 2 3 4 5
@@ -234,7 +240,7 @@ console.log();
 for(let i = 5; i >= 1; i--){
     let line = '';
     for(let j = i; j <= 5; j++) {
-    line = line + j + ' '; // line += j + ' ';
+    line = line + j + ' ';  // line += j + ' ';
     }
     console.log(line);
 }
