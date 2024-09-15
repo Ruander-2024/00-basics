@@ -23,6 +23,7 @@ function searchMax(one, two, three) {
 console.log(searchMax(10, 2, 10));
 console.log(searchMax(17, -10, -45));
 console.log(searchMax(1115, 510, 440));
+console.log();
 
 
 
@@ -56,6 +57,7 @@ console.log(testNumbers(20, 60))
 console.log(testNumbers(20, 20))
 console.log(testNumbers(20, 30))
 
+console.log();
 
 //*************************************************** THIRD *************************************************** */
 
@@ -81,6 +83,7 @@ function difference(number) {
 console.log(difference(18))
 console.log(difference(50))
 console.log(difference(21))
+console.log();
 
 
 //*************************************************** FOURTH *************************************************** */
@@ -109,6 +112,7 @@ console.log(positiveAndNegative(4, 6));
 console.log(positiveAndNegative(-4, 6));
 console.log(positiveAndNegative(6, -4));
 console.log(positiveAndNegative(-6, -4));
+console.log();
 
 //*************************************************** FIFTH *************************************************** */
 
@@ -130,6 +134,7 @@ console.log(checkNumbers(20, 70, 79));
 console.log(checkNumbers(5, 66, 199));
 console.log(checkNumbers(65, 89, 199));
 console.log(checkNumbers(121, 9, 199));
+console.log();
 
 
 //*************************************************** SIXTH *************************************************** */
@@ -143,16 +148,22 @@ console.log(checkNumbers(121, 9, 199));
 //false
 
 function lastDigit(firstNumber, secondNumber, thirdNumber) {
-
+    if(firstNumber >= 0 || secondNumber >= 0 || thirdNumber >= 0 && firstNumber.charAt(-1)=== secondNumber.charAt(-1)=== thirdNumber.charAt(-1)){
+        return true;
+    }
+    else{
+        return false;
+    }
     //TODO
 
 }
 
-// console.log(lastDigit(22, 32, 422));
-// console.log(lastDigit(-22, 32, 402));
-// console.log(lastDigit(22, -32, 400));
 
+ console.log(lastDigit(22, 32, 422));
+ console.log(lastDigit(-22, 32, 402));
+ console.log(lastDigit(22, -32, 400));
 
+ console.log();
 //*************************************************** SEVENTH *************************************************** */
 
 //Írj meg egy funkciót, amely átváltja a paraméterben kapott Celsius fokot Fahrenheit-re.
@@ -166,15 +177,16 @@ function lastDigit(firstNumber, secondNumber, thirdNumber) {
 
 function celsiusToFahrenheit(celsius) {
     //TODO
-
+    return (celsius*1.8 + 32);
 }
 
 
 
-// console.log(celsiusToFahrenheit(14));
-// console.log(celsiusToFahrenheit(23));
-// console.log(celsiusToFahrenheit(32));
-// console.log(celsiusToFahrenheit(44));
+ console.log(celsiusToFahrenheit(14));
+ console.log(celsiusToFahrenheit(23));
+ console.log(celsiusToFahrenheit(32));
+ console.log(celsiusToFahrenheit(44));
+console.log();
 
 //*************************************************** EIGHTH *************************************************** */
 
@@ -189,14 +201,19 @@ function celsiusToFahrenheit(celsius) {
 // false
 
 function leapyear(year) {
-
+    if((year % 4 === 0 && year % 100 !== 0) ||  (year % 400 === 0)){
+        return true;
+    }
+    else{
+        return false;
+    }
     //TODO
 
 }
 
 
-// console.log(leapyear(2016));
-// console.log(leapyear(2000));
-// console.log(leapyear(1700));
-// console.log(leapyear(1800));
-// console.log(leapyear(100));
+ console.log(leapyear(2016));
+ console.log(leapyear(2000));
+ console.log(leapyear(1700));
+ console.log(leapyear(1800));
+ console.log(leapyear(100));

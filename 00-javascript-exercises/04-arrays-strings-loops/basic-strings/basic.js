@@ -3,16 +3,22 @@
 //Adott egy string és egy tömb. Vedd a hosszúságukat, és vizsgáld meg, hogy a 2 szám összege páros-e.
 //Bonus: Irass ki true-t ha páros, false-t ha páratlan.
 //
-//Input: console.log(lengthSumIsEven('This is just a normal sentence', [true, false, false, true, true, true]));
+Input: console.log(lengthSumIsEven('This is just a normal sentence', [true, false, false, true, true, true]));
 //Output: true
 //
-//Input: console.log(lengthSumIsEven('Open sesame!', [11, 42, 6, 99, -2]));
+Input: console.log(lengthSumIsEven('Open sesame!', [11, 42, 6, 99, -2]));
 //Output: false
 
 function lengthSumIsEven(myStr, myArr) {
-
+        if(myStr.lenght % 2 == 0 && myArr.lenght % 2 == 0){
+            return true;
+        }
+        else{
+            return false;
+        }
 
 }
+console.log();
 
 // ---------------------------MÁSODIK FELADAT--------------------------------------------
 //

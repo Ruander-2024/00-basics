@@ -3,15 +3,16 @@
 //Írj meg egy programot, amely a paraméterben kapott számszor adja vissza a paraméterben kapott szót.
 
 function multipleString(word, number) {
-
+  return word.repeat(number);
   //TODO
 
 };
 
 
 
-// console.log(multipleString("elephant", 3));
-// console.log(multipleString("mouse", 4));
+ console.log(multipleString("elephant", 3));
+ console.log(multipleString("mouse", 4));
+console.log();
 
 
 //*************************************************** SECOND *************************************************** */
@@ -25,16 +26,22 @@ function multipleString(word, number) {
 //-1
 
 function countCharacter(word, char) {
-
+  if(word.includes(char)){
+    return word.indexOf(char);
+  }
+  else{
+    return -1;
+  }
   //TODO
 
 };
 
 
 
-// console.log(countCharacter("mouse", "m"));
-// console.log(countCharacter("number", "e"));
-// console.log(countCharacter("sunday", "g"));
+ console.log(countCharacter("mouse", "m"));
+ console.log(countCharacter("number", "e"));
+ console.log(countCharacter("sunday", "g"));
+console.log();
 
 
 //*************************************************** THIRD *************************************************** */
@@ -48,14 +55,16 @@ function countCharacter(word, char) {
 //mmousem
 
 function frontAndBack(word) {
-
+    return (word.charAt(0) + word + word.charAt(0));
+    
   //TODO
 
 };
 
-// console.log(frontAndBack('dog'));
-// console.log(frontAndBack('cat'));
-// console.log(frontAndBack('mouse'));
+ console.log(frontAndBack('dog'));
+ console.log(frontAndBack('cat'));
+ console.log(frontAndBack('mouse'));
+console.log();
 
 
 //*************************************************** FOURTH *************************************************** */
@@ -67,14 +76,20 @@ function frontAndBack(word) {
 //TIPP: Használt a string substring metódusát.
 
 function addThree(word) {
-
+      if(word.length < 3){
+        return word;
+      }
+      else {
+        return (word.slice(-3) + word + word.slice(-3));
+      }
   //TODO
 
 };
 
-// console.log(addThree("abc"));
-// console.log(addThree("ab"));
-// console.log(addThree("abcd"));
+ console.log(addThree("abc"));
+ console.log(addThree("ab"));
+ console.log(addThree("abcd"));
+console.log();
 
 
 //*************************************************** FIFTH *************************************************** */
@@ -88,14 +103,15 @@ function addThree(word) {
 
 
 function concatenateStrings(word1, word2) {
-
+    return word1.slice(1, ) + word2.slice(1, );
   //TODO
 
 };
 
-// console.log(concatenateStrings("dog", "cat"));
-// console.log(concatenateStrings("X", "Y"));
-// console.log(concatenateStrings("we", "me"));
+ console.log(concatenateStrings("dog", "cat"));
+ console.log(concatenateStrings("X", "Y"));
+ console.log(concatenateStrings("we", "me"));
+console.log();
 
 
 //*************************************************** SIXTH *************************************************** */
@@ -104,14 +120,15 @@ function concatenateStrings(word1, word2) {
 //A kapott index értéke minden esetben kisebb, mint a szó hossza. 
 
 function findChar(word, index) {
-
+  return word.charAt(index);
   //TODO
 
 };
 
-// console.log(findChar("Auto", 2));
-// console.log(findChar("Printer", 4));
-// console.log(findChar("Jaguar", 5));
+ console.log(findChar("Auto", 2));
+ console.log(findChar("Printer", 4));
+ console.log(findChar("Jaguar", 5));
+console.log();
 
 
 //*************************************************** SEVENTH *************************************************** */
@@ -125,12 +142,21 @@ function findChar(word, index) {
 //3
 
 function countVowels(word) {
+     const vowels = "aeiouAEIOU";
+     let count = 0;
+     
+     for (let char of word){
+      if (vowels.includes(char)) {
+        count++;
+      }
+     }
 
+     return count;
   //TODO
 
 }
 
 
-// console.log(countVowels("Auto"));
-// console.log(countVowels("Printer"));
-// console.log(countVowels("Jaguar"));
+ console.log(countVowels("Auto"));
+ console.log(countVowels("Printer"));
+ console.log(countVowels("Jaguar"));

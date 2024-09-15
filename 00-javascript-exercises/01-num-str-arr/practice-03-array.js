@@ -7,14 +7,15 @@
 //-3
 
 function sumArray(myArray) {
-
+     
     //TODO
 
 };
 
-// console.log(sumArray([10, 32, 20]));
-// console.log(sumArray([5, 7, 9]));
-// console.log(sumArray([0, 8, -11]));
+ console.log(sumArray([10, 32, 20]));
+ console.log(sumArray([5, 7, 9]));
+ console.log(sumArray([0, 8, -11]));
+console.log();
 
 
 //*************************************************** SECOND *************************************************** */
@@ -28,7 +29,7 @@ function sumArray(myArray) {
 //false
 
 function findThree(myArray) {
-
+        
     //TODO
 
 };

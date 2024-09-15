@@ -3,10 +3,26 @@ console.log(' ---------------- get sum Of Array is even -----------');
 // Készíts egy metódust, ami megnézni, hogy egy tömb elemeinek összege páros-e?
 // Adja vissza a megfelelő boolean értéket
 
-// console.log(sumOfArrayIsEven([22, 4, 20, 0, 14])); // Output: true;
-// console.log(sumOfArrayIsEven([9, 11, 11])); // Output: false;
-// console.log(sumOfArrayIsEven([])); //Output:  false;
-function sumOfArrayIsEven(arr) {}
+ console.log(sumOfArrayIsEven([22, 4, 20, 0, 14])); // Output: true;
+ console.log(sumOfArrayIsEven([9, 11, 11])); // Output: false;
+ console.log(sumOfArrayIsEven([])); //Output:  false;
+function sumOfArrayIsEven(arr) {
+    if(arr.length > 0){
+        let sum = 0;
+        for(let i = 0; i < arr.length; i++){
+            sum = sum + arr[i]
+        }
+        if (sum % 2 === 0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
+}
 
 
 console.log(' ------------------ get even numbers ----------------');
@@ -15,9 +31,19 @@ console.log(' ------------------ get even numbers ----------------');
 // Készíts egy metódust, ami kigyűjti a páros számokat egy tömbből.
 // Térjen vissza csak a páros számokat tartalmazó tömbbel
 
-// console.log(getEvenNumbers([12, 3, 41, 22])); // Output: [12,22];
-// console.log(getEvenNumbers([3, 55, 7])); // Output: [];
-function getEvenNumbers(arr) {}
+ console.log(getEvenNumbers([12, 3, 41, 22])); // Output: [12,22];
+ console.log(getEvenNumbers([3, 55, 7])); // Output: [];
+function getEvenNumbers(arr) {
+    const evenNumbers = [];
+
+for (let i = 0; i < arr.length; i++) {
+if (arr[i] % 2 === 0) {
+evenNumbers.push(arr[i]);
+}
+}
+
+return evenNumbers;
+}
 
 console.log(' ---------------------- harmony array ----------- ');
 
