@@ -5,8 +5,12 @@
 function multipleString(word, number) {
 
   //TODO
+    return word.repeat(number);
+  };
+  
+  console.log(multipleString("elephant", 3)); // elephantelephantelephant
+  console.log(multipleString("mouse", 4));    // mousemousemousemouse
 
-};
 
 
 
@@ -27,9 +31,13 @@ function multipleString(word, number) {
 function countCharacter(word, char) {
 
   //TODO
+  return word.indexOf(char);
 
 };
 
+console.log(countCharacter("mouse", "m")); // 0
+console.log(countCharacter("number", "e")); // 4
+console.log(countCharacter("sunday", "g")); // -1
 
 
 // console.log(countCharacter("mouse", "m"));
@@ -50,8 +58,13 @@ function countCharacter(word, char) {
 function frontAndBack(word) {
 
   //TODO
-
+  const firstChar = word.charAt(0);
+  return firstChar + word + firstChar;
 };
+
+console.log(frontAndBack('dog'));   // ddogd
+console.log(frontAndBack('cat'));   // ccatc
+console.log(frontAndBack('mouse')); // mmousem
 
 // console.log(frontAndBack('dog'));
 // console.log(frontAndBack('cat'));
@@ -69,8 +82,17 @@ function frontAndBack(word) {
 function addThree(word) {
 
   //TODO
-
+  if (word.length < 3) {
+    return word;
+  } else {
+    const lastThree = word.substring(word.length - 3);
+    return lastThree + word + lastThree;
+  }
 };
+
+console.log(addThree("abc"));   // abcabcabc
+console.log(addThree("ab"));    // ab
+console.log(addThree("abcd"));  // bcdabcdbcd
 
 // console.log(addThree("abc"));
 // console.log(addThree("ab"));
@@ -90,8 +112,14 @@ function addThree(word) {
 function concatenateStrings(word1, word2) {
 
   //TODO
-
+  const newWord1 = word1.length > 1 ? word1.substring(1) : '';
+  const newWord2 = word2.length > 1 ? word2.substring(1) : '';
+  return newWord1 + newWord2;
 };
+
+console.log(concatenateStrings("dog", "cat"));  // ogat
+console.log(concatenateStrings("X", "Y"));      // "" (üres string)
+console.log(concatenateStrings("we", "me"));    // ee
 
 // console.log(concatenateStrings("dog", "cat"));
 // console.log(concatenateStrings("X", "Y"));
@@ -106,8 +134,12 @@ function concatenateStrings(word1, word2) {
 function findChar(word, index) {
 
   //TODO
-
+  return word.charAt(index);
 };
+
+console.log(findChar("Auto", 2));    // t
+console.log(findChar("Printer", 4)); // t
+console.log(findChar("Jaguar", 5));  // r
 
 // console.log(findChar("Auto", 2));
 // console.log(findChar("Printer", 4));
@@ -127,9 +159,21 @@ function findChar(word, index) {
 function countVowels(word) {
 
   //TODO
+  const vowels = 'aeiouAEIOU';
+  let count = 0;
 
+  for (let i = 0; i < word.length; i++) {
+    if (vowels.includes(word[i])) {
+      count++;
+    }
+  }
+
+  return count;
 }
 
+console.log(countVowels("Auto"));    // 3
+console.log(countVowels("Printer")); // 2
+console.log(countVowels("Jaguar"));  // 3
 
 // console.log(countVowels("Auto"));
 // console.log(countVowels("Printer"));
