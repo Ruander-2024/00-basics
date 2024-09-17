@@ -9,12 +9,8 @@
 function sumArray(myArray) {
 
     //TODO
-    return myArray[0] + myArray[1] + myArray[2];
-};
 
-console.log(sumArray([10, 32, 20]));  // 62
-console.log(sumArray([5, 7, 9]));     // 21
-console.log(sumArray([0, 8, -11]));   // -3
+};
 
 // console.log(sumArray([10, 32, 20]));
 // console.log(sumArray([5, 7, 9]));
@@ -34,12 +30,8 @@ console.log(sumArray([0, 8, -11]));   // -3
 function findThree(myArray) {
 
     //TODO
-    return myArray[0] === 3 || myArray[myArray.length - 1] === 3;
-};
 
-console.log(findThree([3, 7, 5]));    // true
-console.log(findThree([1, 3, 5, 3])); // true
-console.log(findThree([2, 4, 6]));    // false
+};
 
 // console.log(findThree([3, 7, 5]));
 // console.log(findThree([1, 3, 5, 3]));
@@ -61,17 +53,7 @@ function takeMiddle(firstArray, secondArray) {
 
     //TODO
 
-     // Kivesszük a középső elemeket mindkét tömbből
-     const middleFirst = firstArray[1];
-     const middleSecond = secondArray[1];
- 
-     // Létrehozunk egy új tömböt a két középső elemmel
-     return [middleFirst, middleSecond];
 };
-
-console.log(takeMiddle([1, 2, 3], [1, 5, 6])); // [2, 5]
-console.log(takeMiddle([3, 3, 3], [2, 8, 0])); // [3, 8]
-console.log(takeMiddle([4, 2, 7], [2, 4, 5])); // [2, 4]
 
 // console.log(takeMiddle([1, 2, 3], [1, 5, 6]));
 // console.log(takeMiddle([3, 3, 3], [2, 8, 0]));
@@ -85,14 +67,9 @@ console.log(takeMiddle([4, 2, 7], [2, 4, 5])); // [2, 4]
 function reverseArray(myArray) {
 
     //TODO
-    const [a, b, c] = myArray;
-    return [c, b, a];
 
 };
 
-console.log(reverseArray([5, 4, 3])); // [3, 4, 5]
-console.log(reverseArray([1, 0, -1])); // [-1, 0, 1]
-console.log(reverseArray([2, 3, 1])); // [1, 3, 2]
 
 // console.log(reverseArray([5, 4, 3]));
 // console.log(reverseArray([1, 0, -1]));
@@ -107,12 +84,9 @@ console.log(reverseArray([2, 3, 1])); // [1, 3, 2]
 function hasTwoOrFive(myArray) {
 
     //TODO
-    return myArray.includes(2) || myArray.includes(5);
+
 };
 
-console.log(hasTwoOrFive([7, 8])); // false
-console.log(hasTwoOrFive([5, 9])); // true
-console.log(hasTwoOrFive([0, 2])); // true
 
 // console.log(hasTwoOrFive([7, 8]));
 // console.log(hasTwoOrFive([5, 9]));
@@ -128,21 +102,9 @@ console.log(hasTwoOrFive([0, 2])); // true
 function swapFirstAndLast(myArray) {
 
     //TODO
-    if (myArray.length <= 1) {
-        return myArray;
-    }
-    const first = myArray[0];
-    const last = myArray[myArray.length - 1];
 
-    myArray[0] = last;
-    myArray[myArray.length - 1] = first;
-
-    return myArray;
 };
 
-console.log(swapFirstAndLast([1, 2, 3, 4])); // [4, 2, 3, 1]
-console.log(swapFirstAndLast([0, 2, 1]));    // [1, 2, 0]
-console.log(swapFirstAndLast([3]));          // [3]
 
 // console.log(swapFirstAndLast([1, 2, 3, 4]));
 // console.log(swapFirstAndLast([0, 2, 1]));
@@ -155,21 +117,7 @@ console.log(swapFirstAndLast([3]));          // [3]
 function findLongest(myArray) {
 
     //TODO
- let longest = '';
 
-
- for (const str of myArray) {
-     
-     if (str.length > longest.length) {
-         longest = str;
-     }
- }
-
- return longest;
-}
-
-console.log(findLongest(['a', 'aa', 'aaa', 'aaaaa', 'aaaa'])); // 'aaaaa'
+};
 
 // console.log(findLongest(['a', 'aa', 'aaa', 'aaaaa', 'aaaa']))
-
-

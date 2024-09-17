@@ -1,4 +1,4 @@
-// In this challenge, you will get 1 string and two numbers as parameters. 
+/ In this challenge, you will get 1 string and two numbers as parameters. 
 // Your task is to make a function that has to return with a list instructions 
 // in the Output Format section below. To make the problem a little easier, 
 // a portion of the code is provided for you in the editor.
