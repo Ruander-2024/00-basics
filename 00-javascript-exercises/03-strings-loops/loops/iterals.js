@@ -100,8 +100,15 @@ console.log(' ---------------- count invalid characters -------------');
 // console.log(countInvalidCahracters('@klléldsa>')); // Output: 1;
 // console.log(countInvalidCahracters('admin@80#test$')); // Output: 3;
 // console.log(countInvalidCahracters('test')); // Output: 0;
-function countInvalidCahracters(str) {}
-
+function countInvalidCahracters(str) {
+    let invalidChar = 0; // Érvénytelen karakter
+    for(let i = 0; i < str.length; i++){
+        if(str[i].match(/[@#$]/gi)) { // g - global - globális | i - insensitive - kis-nagybetűt nem veszi figyelembe
+            invalidChar++;
+        }
+    }
+    return invalidChar;
+}
 console.log(' -------------- remove square from array -----------');
 
 // Készíts egy metódust, ami paraméterként kap egy tömböt és egy számot
@@ -111,19 +118,45 @@ console.log(' -------------- remove square from array -----------');
 // ha a "kivágott rész mérete" nem lenne nagyobb mint a tömb megjelölt indexe után lévő (maradék) elemek száma.
 // Adja vissza a metódus a módosított tömböt
 
-// console.log(removeSquareFromArray([22, 33, 44], 1)); // Output: [22,44];
-// console.log(removeSquareFromArray([11, 22, 33, 44, 55], 3)); // Output: [11,22,33,44,55];
-// console.log(removeSquareFromArray([11, 22, 33, 44, 55], 2)); // Output: [11,22,55];
-function removeSquareFromArray(array, index) {}
+function removeSquareFromArray(array, index) {
+    // Ellenőrizzük, hogy van-e elég elem az index után a kivágáshoz
+    // Ha a feltétel teljesül, akkor lehet eltávolítani az eleeket
+    if (index <= array.length - (index + 1)) {
+        // A for ciklus annyszor fut, ahány elemet törölni akarunk
+        // Az i értéke 0-tól index-1-ig fog növekedni
+        for (let i = 0; i < index; i++) {
+            // Minden egyes ciklusban eltávolítunk 1 elemet az 'index' pozícióból
+            array.splice(index, 1); 
+            // A splice(index, 1) azt jelenti, hoy az 'index' helyen lévő egy elemet töröljük.
+            // Ezután a tömb maradék elemei előrébb csúsznak, így az index mindig ugyanott marad.
+        }
+    }
+    // Visszaadjuk a módosított tömböt
+    return array;
+}
 
+
+console.log(removeSquareFromArray([22, 33, 44], 1)); // Output: [22, 44];
+console.log(removeSquareFromArray([11, 22, 33, 44, 55], 3)); // Output: [11, 22, 33, 44, 55];
+console.log(removeSquareFromArray([11, 22, 33, 44, 55], 2)); // Output: [11, 22, 55];
 console.log(' ----------- collect valid names --------------');
 
 // Készíts egy metódust, ami egy felhasználó neveket tartalmazó tömbböl kigyűjti az érvényeseket
-// Érvényes az az a felhasználó név, ami legalább 5 karakter hosszú, nem tartalmazhatja az 'admin' vagy 'Admin' szórészletet
+// Érvényes az  a felhasználó név, ami legalább 5 karakter hosszú, nem tartalmazhatja az 'admin' vagy 'Admin' szórészletet
 // Tartalmaznia kell legalább egy szám karaktert.
 // Térjen vissza csak az érvényes neveket tartalamzó tömbbel
 
+function collectValidUserNames(array) {
+    let newArr = []; //Új tömb
 
-// console.log(collectValidUserNames(['admin43', 'JohhDee', 'Boy3'])); // Output: [];
-// console.log(collectValidUserNames(['Admin3', 'BZoli42', 'Steve1', 'Billy'])); // Output: ['BZoli42', 'Steve1'];
-function collectValidUserNames(array) {}
+    for(let i = 0; i < array.length; i++){
+        if (array[i].length >= 5 &&
+            array[i].toLowerCase().includes("admin") === false && 
+            array[i].match(/[0-9]/)){
+                newArr.push(array[i]);
+        }
+    }
+    return newArr;
+}
+console.log(collectValidUserNames(['admin43', 'JohhDee', 'Boy3'])); // Output: [];
+console.log(collectValidUserNames(['Admin3', 'BZoli42', 'Steve1', 'Billy'])); // Output: ['BZoli42', 'Steve1'];
