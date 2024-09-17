@@ -71,20 +71,34 @@ console.log(' ----------- check UserName -----------------');
 // Adjon vissza true értéket, ha legalább 5 karakter és az első betűje nagy
 // Minden más esetben térjen vissza false értékkel
 
-// console.log(checkUserNameIsValid('BZoli')); //Output: true;
-// console.log(checkUserNameIsValid('anonim')); //Output: false;
-// console.log(checkUserNameIsValid('Boy')); //Output: false;
-function checkUserNameIsValid(userName) { }
+console.log(checkUserNameIsValid('BZoli')); //Output: true;
+console.log(checkUserNameIsValid('anonim')); //Output: false;
+console.log(checkUserNameIsValid('Boy')); //Output: false;
+function checkUserNameIsValid(userName) { 
+    if(userName.length >= 5 && userName[0] === userName[0].toUpperCase()){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 console.log('---------------- check string lenght is even ------------');
 
 // Készíts egy metódust, ami ellenőrzi hogy egy string hossza páros, vagy páratlan szám.
 // Adja vissza a megfelelő boolean értéket
 
-// console.log(checkStringLengthIsEven('alma')); //Output: true;
-// console.log(checkStringLengthIsEven('Vad ember')); //Output: false;
-// console.log(checkStringLengthIsEven('vadEmber')); //Output: true;
-function checkStringLengthIsEven(str) { }
+console.log(checkStringLengthIsEven('alma')); //Output: true;
+console.log(checkStringLengthIsEven('Vad ember')); //Output: false;
+console.log(checkStringLengthIsEven('vadEmber')); //Output: true;
+function checkStringLengthIsEven(str) { 
+    if(str.length % 2 === 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 
 console.log('----------------- check valid email -------------');
@@ -113,18 +127,24 @@ console.log('------------------ replace first dot --------------');
 // Készíts egy metódust, ami kicseréli az első '.' karaktert '@' karakterre egy stringben
 // Adja vissza az új stringet.
 
-// console.log(replaceFirstDotToAt('name.family.hu')); //Output: 'name@family.hu';
-// console.log(replaceFirstDotToAt('noDot')); //Output: 'noDot';
-function replaceFirstDotToAt(str) { }
+console.log(replaceFirstDotToAt('name.family.hu')); //Output: 'name@family.hu';
+console.log(replaceFirstDotToAt('noDot')); //Output: 'noDot';
+function replaceFirstDotToAt(str) {
+    return str.replace('.', '@')
+ }
 
 
 console.log('-------------------- remove spaces ----------------');
 
 // Készíts egy metódust, ami "kiszedi" az szóközöket egy mondatból
 
-// console.log(removeSpaces('#we love coding')); //Output: '#welovecoding';
-// console.log(removeSpaces('noSpace')); //Ouput: 'noSpace;
-function removeSpaces(str) { }
+console.log(removeSpaces('#we love coding')); //Output: '#welovecoding';
+console.log(removeSpaces('noSpace')); //Ouput: 'noSpace;
+function removeSpaces(str) {
+    return str.replaceAll(' ', '');
+    // return str.replace(/\s/g, '');
+    // return str.split(" ").join('');
+ }
 
 console.log('------------------ get Family Name ----------------');
 
@@ -133,6 +153,37 @@ console.log('------------------ get Family Name ----------------');
 // Ha teljes névet kap paraméterként adja vissza a családnevet
 // Ha egyetlen nevet kap paraméterként, akkor adja vissza: 'invalid name'
 
-// console.log(getFamilyName('John')); //Output: 'invalid name';
-// console.log(getFamilyName('Barack Obama')); //Output: 'Obama';
-function getFamilyName(fullName) { }
+console.log(getFamilyName('John')); //Output: 'invalid name';
+console.log(getFamilyName('Barack Obama')); //Output: 'Obama';
+function getFamilyName(fullName) {
+    if(fullName.indexOf(' ') !== -1) {
+        return fullName.slice(fullName.indexOf(" ") + 1);
+    }
+    else{
+        return 'invalid name';
+    }
+const nev = fullName.split(' ');
+    if (nev.length == 2) {
+    return nev[1];
+    } else {
+    return 'invalid name';
+    }
+function getFamilyName(fullName) {
+    // Eltávolítja a szóközöket a név elejéről és végéről
+    const parts = fullName.trim().split(/\s+/g); //trim(): Eltávolítja az esetleges kezdő és záró szóközöket.
+    //split(/\s+/): Szóközökkel való elválasztás, és bármilyen számú szóköz kezelése.
+
+    if (parts.length === 2) { // Ellenőrzi, hogy a név pontosan két részből áll-e (keresztnév és családnév).
+
+    // Visszaadja a második részt (családnév)
+    return parts[1];
+    } else {
+    // Visszaadja az 'invalid name' szöveget, ha a név nem két részből áll
+    return 'invalid name';
+    }
+    }
+
+    // Tesztelés
+    console.log(getFamilyName('John')); // Kimenet: 'invalid name'
+    console.log(getFamilyName('Barack Obama')); // Kimenet: 'Obama'
+ }
