@@ -30,7 +30,7 @@ for (let i = 5; i >= 0; i--) {
 const nums = [10, 23, 35, 46, 58];
 
 for (let i = 0; i < nums.length; i++) {
-    // console.log(nums[i]);
+    console.log(nums[i]);
     // 10, 23, 35, 46, 58
 }
 
@@ -188,6 +188,7 @@ for (let i = 1; i <= 2; i++) {
 
     for (let j = 1; j <= 10; j++) {
         console.log(i +" * "+ j +" = "+ i * j);
+        // console.log(`${i} * ${j} = ${i*j}`);
         
     }
 
@@ -222,11 +223,12 @@ console.log();
 for (let i = 5; i >= 1; i--) {
     let line = '';
     for(let j = i; j <= 5; j++){
-        line += j + ' ';
+        line = line + j + ' '; // line += j + ' ';
     }
     console.log(line);
     
 }
 
 console.log();
+
 
