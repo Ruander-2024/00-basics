@@ -318,7 +318,23 @@ while(userName[index3] !== ' '){
 
 console.log();
 
-let index4 = 0;
+let index4 = userName.length -1 ;
 
+while(userName[index4] !== ' '){
+    console.log( userName [index4]);
+    index4 --;
+}
 
+console.log();
 
+// DO-WHILE hátultesztelős ciklus
+
+let j = 0;             // index
+let line = '';        // sor
+
+do {
+    j++;
+    line = line + j;  // line += j 
+} while(j !== 5)
+
+    console.log(line);

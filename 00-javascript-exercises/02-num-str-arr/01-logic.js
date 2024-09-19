@@ -3,9 +3,17 @@
 //We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 //alszunk ha nincs hétköznap vagy hétvége van.
 
+// A hétköznap paraméterünk igaz, ha hétköznap van.
+// A nyaralunk paraméter igaz, ha nyaralunk van.
+// Ha nem hétköznap van, vagy nyaralunk, akkor alszunk. Térjünk vissza true értékkel alszunk.
 
 function sleepIn(weekday, vacation) {
-
+    if(weekday == false || vacation == true){
+        return true;
+    }
+    else{
+        return false;
+    }
 
 }
 
@@ -20,11 +28,48 @@ console.log(sleepIn(false, true)); // true
 //of them is smiling. Return true if we are in trouble.
 //Van két majmunk ha mindkettő mosolyog vagy egyik sem akkor bajban vagyunk (true), különben (false).
 
-function monkeyTrouble(aSmile, bSmile) {
+// function monkeyTrouble(aSmile, bSmile) {
+    // if(aSmile == true || bSmile == true){
+    //     return true;
+    // }                                                saját szar
+   
+    //  if(aSmile == false || bSmile == false){
+    //     return true;
+    // }
+    // if(aSmile == true || bSmile == false){
+    //     return false;
+    // }
+    
+    function monkeyTrouble(aSmile, bSmile) {                // Márké
+        let result;
+        do {
+        result = (aSmile === bSmile);
+        } while (false);
+        return result;
+        }
+    
+        function monkeyTrouble(aSmile, bSmile) {
+            if (aSmile == true && bSmile == true || aSmile == false && bSmile == false) {
+                return true;
+            }
+            else{
+                return false;
+            }
+    
+    
+        }
+
+
+    // function monkeyTrouble(aSmile, bSmile) {
+    //     if(aSmile == true && bSmile == true || aSmile == false && bSmile == false){              // Kriszti
+    //     return true;
+    //     }
+    //     else
+    //     return false;
+    //     }
 
 
 
-}
 console.log('monkeyTrouble');
 console.log(monkeyTrouble(true, true)); // true
 console.log(monkeyTrouble(false, false)); // true
@@ -35,8 +80,28 @@ console.log(monkeyTrouble(true, false)); // false
 //then return double their sum.
 
 function sumDouble(a, b) {
-
+    if(a == b ){
+    return(a+b)*2;                   // Kriszti
+    }
+    else return a+b;
 }
+
+// function sumDouble(a, b) {             // Eszti        
+//     let sum = 0;
+    
+//     do {
+//     sum = a + b;
+//     if (a === b) {
+//     sum = 2 * sum;
+//     }
+//     } while (false);
+    
+//     return sum;
+//     }
+
+
+
+
 console.log('sumDouble');
 console.log(sumDouble(1, 2)); // 3
 console.log(sumDouble(3, 2)); // 5
@@ -50,8 +115,18 @@ console.log(sumDouble(2, 2)); // 8
 
 function parrotTrouble(talking, hour) {
 
+    if(talking === true && hour < 7 || hour > 20 ){             // Dani 
+        return true;
+        } else {
+        return false;
+        }    
 
 }
+
+// function parrotTrouble(talking, hour) {
+//     return talking && (hour < 7 || hour > 20);
+// }
+
 console.log('parrotTrouble');
 console.log(parrotTrouble(true, 6)); // true
 console.log(parrotTrouble(true, 7)); // false
@@ -62,9 +137,13 @@ console.log(parrotTrouble(false, 6)); // false
 //Except if the parameter "negative" is true, then return true only if both are negative.
 
 function posNeg(a, b, negative) {
-
-
-}
+    if( a === -a && b === -b && negative === true ){
+    return false
+    } else{
+    return true
+    }
+    
+    }
 
 console.log('posNeg');
 console.log(posNeg(1, -1, false)); // true
