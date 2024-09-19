@@ -250,5 +250,78 @@ console.log();
 
 console.log(Date.now());
 
+console.log();
 
 
+
+// While - ciklus     -       Előtesztelő ciklus
+
+// Kiíratás hátulról
+
+const listAges = [30, 40, 12, 26, 57];  // Lista az életkorokról
+
+let lastIndex = listAges.length - 1  // Utolsó index
+while (lastIndex >= 0) {
+    console.log(listAges[lastIndex]);
+    lastIndex--;
+    
+}
+console.log();
+
+const listAges2 = [30, 40, 12, 26, 57];
+
+for (let lastIndex = listAges2.length-1; lastIndex >= 0 ; lastIndex--){
+    console.log(listAges[lastIndex]);
+}
+
+
+console.log();
+
+
+
+//  26-os elem megkeresése
+
+let i = 0;
+
+while(i < listAges.length) {
+    if(listAges[i] === 26){
+        console.log(`Megtaláltuk a ${listAges[i]}-os elemet`);
+        break;
+    }
+    i++;
+}
+
+console.log();
+
+
+// Betűk egymás alá kiíratása
+
+const userName = 'John Doe';
+
+let index2 = 0;
+
+while(index2 < userName.length){
+    if(userName[index2] !== ' '){
+        console.log(userName[index2]);
+        
+    }else {
+        break;
+    }
+    index2++;
+}
+console.log();
+
+let index3 = 0;
+
+while(userName[index3] !== ' '){
+    console.log(userName[index3]);
+    index3++;
+}
+console.log();
+
+let index4 = 0;
+
+while(userName[index4] -1 !== ' '){
+    console.log(userName[index4]);
+    index4++;
+}

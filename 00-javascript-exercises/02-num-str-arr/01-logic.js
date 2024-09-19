@@ -35,7 +35,12 @@ console.log(monkeyTrouble(true, false)); // false
 //then return double their sum.
 
 function sumDouble(a, b) {
-
+    if(a === b){
+        return (a + b)*2;
+    }
+    else{
+        return a + b;
+    }
 }
 console.log('sumDouble');
 console.log(sumDouble(1, 2)); // 3
@@ -49,7 +54,13 @@ console.log(sumDouble(2, 2)); // 8
 // Van egy papagájunk a hour a valós idő, ha 7 óra előtt vagy 20 óra után beszél bajban vagyunk.
 
 function parrotTrouble(talking, hour) {
-
+    
+    if(talking === true && hour< 7 || hour > 20){
+        return true;
+    }
+    else{
+        return false;
+    }
 
 }
 console.log('parrotTrouble');
@@ -62,7 +73,12 @@ console.log(parrotTrouble(false, 6)); // false
 //Except if the parameter "negative" is true, then return true only if both are negative.
 
 function posNeg(a, b, negative) {
-
+    if(a === -a && b === -b && negative === true){
+        return false;
+    }
+    else {
+        return true;
+    }
 
 }
 
@@ -92,7 +108,12 @@ console.log(or35(8)); // false
 //If the string length is less than 2, use whatever chars are there.
 
 function front22(str) {
-
+    if(str.length < 2){
+        return str;
+    }
+    else {
+        
+    }
 
 }
 console.log('front22');
