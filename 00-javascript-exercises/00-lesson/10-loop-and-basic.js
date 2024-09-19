@@ -247,3 +247,78 @@ for(let i = 5; i >= 1; i--){
 
 console.log();
 
+// WHILE  - Előltesztelős cikus
+
+// Kiiratás hátulról
+const listAges = [30,40,12,26,57];   // Lista az életkorokról
+
+let lastIndex = listAges.length - 1  // Utolsó index
+while (lastIndex >= 0) {
+    console.log(listAges[lastIndex]);
+    lastIndex--;
+}
+
+console.log("----------------------------------")
+
+// For ciklusban : 
+
+const listAges2 = [30,40,12,26,57];
+
+for(let lastIndex = listAges2.length - 1; 
+    lastIndex >= 0; 
+    lastIndex--)
+    {
+    console.log(listAges2[lastIndex]);
+}
+
+// Keresés While -al
+
+// 26-os számú elem megkeresése
+
+let i = 0;
+
+while(i < listAges.length) {
+    if(listAges[i] === 26){
+        console.log(`Megtaláltuk a ${listAges[i]}-os elemet.`);
+        break;
+    }
+    i++;
+}
+
+console.log();
+
+// Betűk egymás alá kiiratása
+
+const userName = 'John Doe';
+
+let index2 = 0
+
+while(index2 < userName.length) {
+    if(userName[index2] !== ' '){
+        console.log(userName[index2]);
+    }
+    else{
+        break;
+    }
+    index2++;
+}
+
+// 
+
+console.log();
+
+let index3 = 0;
+
+while(userName[index3] !== ' '){
+    console.log(userName[index3]);
+    index3++;
+}
+
+// Visszafelé kiiratva:
+
+console.log();
+
+let index4 = 0;
+
+
+
