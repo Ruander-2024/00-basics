@@ -51,27 +51,89 @@ console.log(' ---------------------- harmony array ----------- ');
 // megegyezik a páratlan számok mennyisgével. Ha igen térjen vissza 'in harmony' értékkel.
 // Ellenkező esetben: 'no harmony'
 
-// console.log(isInHarmony([22, 3, 44, 5, 76, 7])); // Output: 'in harmony';
-// console.log(isInHarmony([33, 5, 66, 8, 10])); // Output: 'no harmony';
-function isInHarmony(arr) {}
+ console.log(isInHarmony([22, 3, 44, 5, 76, 7])); // Output: 'in harmony';
+ console.log(isInHarmony([33, 5, 66, 8, 10])); // Output: 'no harmony';
+
+
+    function isInHarmony(arr) {
+        let even = [];
+        let odds = [];
+    
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] % 2 === 0){
+                even.push(arr[i])
+            }
+            else if(arr[i] % 2 !== 0){
+                odds.push(arr[i]);
+            }
+        }
+        console.log(even.length);
+        if(even.length === odds.length){
+            return('in harmony');
+        }
+        else{
+            return('no harmony');
+        }
+        
+    }
+
+    function isInHarmony(arr) {
+        let even = 0;
+        let odds = 0;
+    
+        for(let i = 0; i < arr.length; i++){
+            if(arr[i] % 2 === 0){
+                even++;
+            }
+            else if(arr[i] % 2 !== 0){
+                odds++;
+            }
+        }
+        if(even === odds){
+            return('in harmony');
+        }
+        else{
+            return('no harmony');
+        }
+    }
+
 
 console.log('------------- reverse String --------------');
 
 // Készíts egy metódust, ami visszaadja egy string tükörképét
 
-// console.log(reverseString('andula')); // Output: 'aludna;
-// console.log(reverseString('bar')); // Output: 'rab;
-function reverseString(str) {}
+ console.log(reverseString('andula')); // Output: 'aludna;
+ console.log(reverseString('bar')); // Output: 'rab;
+function reverseString(str) {
+    let reverseWord = '';
+    for(let i = str.length - 1; i >= 0; i--){
+        reverseWord = reverseWord + str[i] // reverseWord += str[i];
+    }
+    return reverseWord;
+}
+
 
 console.log(' ---------------- count invalid characters -------------');
+console.log();
 
 // Készíts egy metódust, ami megszámolja mennyi érvénytelen karakter van egy stringben
 // Az érvénytelen karakterek: '@', '#', '$'
 
-// console.log(countInvalidCahracters('@klléldsa>')); // Output: 1;
-// console.log(countInvalidCahracters('admin@80#test$')); // Output: 3;
-// console.log(countInvalidCahracters('test')); // Output: 0;
-function countInvalidCahracters(str) {}
+ console.log(countInvalidCahracters('@klléldsa>')); // Output: 1;
+ console.log(countInvalidCahracters('admin@80#test$')); // Output: 3;
+ console.log(countInvalidCahracters('test')); // Output: 0;
+function countInvalidCahracters(str) {
+    let invalidChar = 0;   // Érvénytelen karakter
+    for(let i = 0; i < str.length; i++){
+        if(str[i].match(/[@#$]/gi)) {    // g - global - globális  |  i - insensitive - kis-nagybetűt nem veszi figyelembe
+            invalidChar++;
+        }
+    }
+    return invalidChar;
+
+
+}
+console.log();
 
 console.log(' -------------- remove square from array -----------');
 
@@ -82,10 +144,36 @@ console.log(' -------------- remove square from array -----------');
 // ha a "kivágott rész mérete" nem lenne nagyobb mint a tömb megjelölt indexe után lévő (maradék) elemek száma.
 // Adja vissza a metódus a módosított tömböt
 
-// console.log(removeSquareFromArray([22, 33, 44], 1)); // Output: [22,44];
-// console.log(removeSquareFromArray([11, 22, 33, 44, 55], 3)); // Output: [11,22,33,44,55];
-// console.log(removeSquareFromArray([11, 22, 33, 44, 55], 2)); // Output: [11,22,55];
-function removeSquareFromArray(array, index) {}
+ console.log(removeSquareFromArray([22, 33, 44], 1)); // Output: [22,44];
+ console.log(removeSquareFromArray([11, 22, 33, 44, 55], 3)); // Output: [11,22,33,44,55];
+ console.log(removeSquareFromArray([11, 22, 33, 44, 55], 2)); // Output: [11,22,55];
+
+ function removeSquareFromArray(array, index) {
+    if(array.slice(index).length < index){
+        return array;
+    }
+    else{
+        array.slice(index, index);
+        return array;
+    }
+}
+console.log();
+
+
+
+
+
+ function removeSquareFromArray(array, index) {
+    
+    if(index <= array.length - (index + 1)) {
+
+        for(let i= 0; i < index; i++){
+            array.splice(index, 1);
+            }
+        }
+        return array;
+
+}
 
 console.log(' ----------- collect valid names --------------');
 
@@ -95,6 +183,18 @@ console.log(' ----------- collect valid names --------------');
 // Térjen vissza csak az érvényes neveket tartalamzó tömbbel
 
 
-// console.log(collectValidUserNames(['admin43', 'JohhDee', 'Boy3'])); // Output: [];
-// console.log(collectValidUserNames(['Admin3', 'BZoli42', 'Steve1', 'Billy'])); // Output: ['BZoli42', 'Steve1'];
-function collectValidUserNames(array) {}
+ console.log(collectValidUserNames(['admin43', 'JohhDee', 'Boy3'])); // Output: [];
+ console.log(collectValidUserNames(['Admin3', 'BZoli42', 'Steve1', 'Billy'])); // Output: ['BZoli42', 'Steve1'];
+function collectValidUserNames(array) {
+    let newArr = []; // új tömb
+
+    for(let i = 0; i < array.length; i++){
+        if (array[i].length >= 5  && 
+            array[i].toLowerCase().includes("admin") === false && 
+            array[i].match(/[0-9]/)){
+                newArr.push(array[i]);
+
+        }
+    }
+    return newArr;
+}

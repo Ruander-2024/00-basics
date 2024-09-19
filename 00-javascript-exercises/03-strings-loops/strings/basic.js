@@ -89,7 +89,7 @@ console.log();
  console.log(checkUserNameIsValid('anonim')); //Output: false;
  console.log(checkUserNameIsValid('Boy')); //Output: false;
 function checkUserNameIsValid(userName) { 
-    if(userName.length >= 5 && userName.substring(0).toUppercase){
+    if(userName.length >= 5 && userName[0] === userName[0].toUpperCase()){
         return true;
     }
     else {
@@ -108,7 +108,7 @@ console.log();
  console.log(checkStringLengthIsEven('Vad ember')); //Output: false;
  console.log(checkStringLengthIsEven('vadEmber')); //Output: true;
 function checkStringLengthIsEven(str) { 
-    if(str.length % 2 ==0){
+    if(str.length % 2 === 0){
         return true;
     }
     else {
@@ -161,10 +161,12 @@ console.log();
 
 // Készíts egy metódust, ami "kiszedi" az szóközöket egy mondatból
 
-// console.log(removeSpaces('#we love coding')); //Output: '#welovecoding';
-// console.log(removeSpaces('noSpace')); //Ouput: 'noSpace;
+ console.log(removeSpaces('#we love coding')); //Output: '#welovecoding';
+ console.log(removeSpaces('noSpace')); //Ouput: 'noSpace;
 function removeSpaces(str) { 
-
+    //return str.replaceAll(' ', '');
+    //return str.replace(/\s+/g, '');
+    return str.split(" ").join('');
 }
 console.log();
 
@@ -175,6 +177,13 @@ console.log('------------------ get Family Name ----------------');
 // Ha teljes nevet kap paraméterként adja vissza a családnevet
 // Ha egyetlen nevet kap paraméterként, akkor adja vissza: 'invalid name'
 
-// console.log(getFamilyName('John')); //Output: 'invalid name';
-// console.log(getFamilyName('Barack Obama')); //Output: 'Obama';
-function getFamilyName(fullName) { }
+ console.log(getFamilyName('John')); //Output: 'invalid name';
+ console.log(getFamilyName('Barack Obama')); //Output: 'Obama';
+function getFamilyName(fullName) { 
+        const nev = fullName.split(' ');
+        if(nev.length == 2){
+            return nev[1];
+        }else {
+            return 'invalid name';
+        }
+}
