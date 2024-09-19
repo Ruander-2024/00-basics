@@ -1,3 +1,4 @@
+
 // for ciklusok
 
 for(let i = 0; i <= 5; i++) {
@@ -30,7 +31,7 @@ for (let i = 5; i >= 0; i--) {
 const nums = [10, 23, 35, 46, 58];
 
 for (let i = 0; i < nums.length; i++) {
-    // console.log(nums[i]);
+    console.log(nums[i]);
     // 10, 23, 35, 46, 58
 }
 
@@ -39,7 +40,7 @@ for (let i = nums.length - 1; i >= 0; i--) {
     // 58, 46, 35, 23, 10
 }
 
-// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben található értékre
+// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben található értékre ------ for of ciklus
 for (const num of nums) {
     console.log(num);
 }
@@ -188,8 +189,7 @@ for (let i = 1; i <= 2; i++) {
 
     for (let j = 1; j <= 10; j++) {
         console.log(i +" * "+ j +" = "+ i * j);
-        //console.log(`${i} * ${j} = ${i*j}`);
-        
+        // console.log(`${i} * ${j} = ${i*j}`);
         
     }
 
@@ -224,7 +224,7 @@ console.log();
 for (let i = 5; i >= 1; i--) {
     let line = '';
     for(let j = i; j <= 5; j++){
-        line += j + ' ';
+        line = line + j + ' '; // line += j + ' ';
     }
     console.log(line);
     
@@ -232,4 +232,81 @@ for (let i = 5; i >= 1; i--) {
 
 console.log();
 
-console.log(Date.now());
+// While - Előltesztelős ciklus
+
+// Kiiratás hatulról
+const listAges = [30, 40, 12, 26, 57]; // Lista az életkorokról
+
+let lastIndex = listAges.length - 1 // Utolsó index
+while (lastIndex >= 0) {
+    console.log(listAges[lastIndex]);
+    lastIndex--;
+}
+
+console.log();
+
+for (let lastIndex = listAges.length - 1; lastIndex >= 0; lastIndex--) {
+    console.log(listAges[lastIndex]);
+}
+
+// 26-os elem megkeresése
+
+console.log();
+
+let index = 0;
+
+while(index < listAges.length) {
+    if(listAges[index] === 26){
+        console.log(`Megtaláltuk a ${listAges[index]}-os elemet.`);
+        break;
+    }
+    index++;
+}
+
+console.log();
+
+// Betűk egymás alá kiiratása
+
+const userName = 'John Doe';
+
+let index2 = 0
+
+while(index2 < userName.length) {
+    if(userName[index2] !== ' '){
+        console.log(userName[index2]);
+    }
+    else{
+        break;
+    }
+    index2++;
+}
+
+console.log();
+
+let index3 = 0;
+
+while(userName[index3] !== ' '){
+    console.log(userName[index3]);
+    index3++;
+}
+
+console.log();
+
+let index4 = userName.length - 1;
+
+while(userName[index4] !== ' '){
+    console.log(userName[index4]);
+    index4--;
+}
+
+// Do - while - hátultesztelős ciklus
+
+let j = 0; // index
+let line = ''; // sor
+
+do {
+    j++;
+    line = line + j; // line += j
+} while(j !== 5)
+
+    console.log(line);

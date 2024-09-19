@@ -5,11 +5,12 @@ console.log('---------------- Concat string -------------------');
 console.log(concatStrings('we are ', 'heroes')); //Output: 'we are heroes'
 console.log(concatStrings('camel', 'Case')); //Output: 'camelCase'
 function concatStrings(str1, str2) {
-    let word = '';
+    let word = ''; // szó
     word = str1 + str2;
     return word;
+
+    // return str1 + str2;
  }
- 
 console.log('------------------ make Full Name --------------');
 
 // Készíts egy metódust ami két névből egy teljes nevet készít szóközzel középen.
@@ -19,13 +20,14 @@ console.log('------------------ make Full Name --------------');
 console.log(makeFullNames('Steve', 'Jobs')); //Output: 'Steve Jobs';
 console.log(makeFullNames('Jim', 120)); //Output: 'invalid name';
 console.log(makeFullNames(120, 'Ibrahim')); //Output: 'invalid name';
-function makeFullNames(firstName, secondName) { 
-    if(typeof firstName == 'number' || typeof secondName == 'number') {
-        return 'invalid name';
+function makeFullNames(firstName, secondName) {
+    if(typeof firstName == 'number' || typeof secondName == 'number'){
+        return 'invalid name' //Érvénytelen név
     }
-    return `${firstName} ${secondName}`;
-    
-}
+    else{
+        return `${firstName} ${secondName}`
+    }
+ }
 console.log(' ---------------- get longer string ---------------');
 
 // Készíts metódust, ami két string paraméterből visszaadja azt, amelyik a hosszabb
@@ -34,14 +36,14 @@ console.log(' ---------------- get longer string ---------------');
 console.log(getLongerString('rövidd', 'hosszabb')); //Output: 'hosszabb';
 console.log(getLongerString('first', '')); //Output: 'first';
 console.log(getLongerString('abba', 'same')); //Output: 'abba';
-function getLongerString(str1, str2) { 
+function getLongerString(str1, str2) {
     if(str1.length >= str2.length){
         return str1;
     }
     else{
         return str2;
     }
-}
+ }
 
 console.log('---------------- check Letters --------------------');
 
@@ -49,21 +51,22 @@ console.log('---------------- check Letters --------------------');
 // Hint: használd a substring metódust ciklus helyet.
 // Visszatérésként adjon boolean-t (true, false).
 
- console.log(checkLetters('Jackson')); //Output: true;
- console.log(checkLetters('camelCAse')); //Output: false;
- console.log(checkLetters('WaWe')); //Output: false;
+console.log(checkLetters('Jackson')); //Output: true;
+console.log(checkLetters('camelCAse')); //Output: false;
+console.log(checkLetters('WaWe')); //Output: false;
 function checkLetters(str) {
-    let firstChar = str[0];
-    let otherChars = str.substring(1);
-
-    if(firstChar === firstChar.toLowerCase() ||
-       otherChars !== otherChars.toLowerCase()
+    let firstChar = str[0]; // Első karakter
+    let otherChars = str.substring(1); // Többi karakter
+  
+    if (
+      firstChar === firstChar.toLowerCase() || // J === J.loLowerCase() j           J === j
+      otherChars !== otherChars.toLowerCase() // aWe !== aWe.toLowerCase() awe      aWe !== awe
     ) {
-        return false;
-    } else{
-        return true;
+      return false;
+    } else {
+      return true;
     }
- }
+  }
 
 console.log(' ----------- check UserName -----------------');
 
@@ -74,14 +77,14 @@ console.log(' ----------- check UserName -----------------');
 console.log(checkUserNameIsValid('BZoli')); //Output: true;
 console.log(checkUserNameIsValid('anonim')); //Output: false;
 console.log(checkUserNameIsValid('Boy')); //Output: false;
-function checkUserNameIsValid(userName) { 
+function checkUserNameIsValid(userName) {
     if(userName.length >= 5 && userName[0] === userName[0].toUpperCase()){
         return true;
     }
     else{
         return false;
     }
-}
+ }
 
 console.log('---------------- check string lenght is even ------------');
 
@@ -107,10 +110,10 @@ console.log('----------------- check valid email -------------');
 // Adjon vissza true értéket, ha legalább 7 karakter és tartalmaz '.' és '@' karaktert.
 // Minden más esetben térjen vissza false értékkel
 
- console.log(checkValidEmail('mail@mail.hu')); //Output: true;
- console.log(checkValidEmail('me@h.h')); //Output: false;
- console.log(checkValidEmail('invelid@ksdkl')); //Output: false;
- console.log(checkValidEmail('anonym.com')); //Output: false;
+console.log(checkValidEmail('mail@mail.hu')); //Output: true;
+console.log(checkValidEmail('me@h.h')); //Output: false;
+console.log(checkValidEmail('invelid@ksdkl')); //Output: false;
+console.log(checkValidEmail('anonym.com')); //Output: false;
 function checkValidEmail(email) { 
     if(email.length > 7 && email.includes('.') && email.includes('@')){
         return true;
@@ -129,9 +132,9 @@ console.log('------------------ replace first dot --------------');
 
 console.log(replaceFirstDotToAt('name.family.hu')); //Output: 'name@family.hu';
 console.log(replaceFirstDotToAt('noDot')); //Output: 'noDot';
-function replaceFirstDotToAt(str) {
-    return str.replace('.', '@')
- }
+function replaceFirstDotToAt(str) { 
+    return str.replace('.', '@');
+}
 
 
 console.log('-------------------- remove spaces ----------------');
@@ -142,7 +145,7 @@ console.log(removeSpaces('#we love coding')); //Output: '#welovecoding';
 console.log(removeSpaces('noSpace')); //Ouput: 'noSpace;
 function removeSpaces(str) {
     return str.replaceAll(' ', '');
-    // return str.replace(/\s/g, '');
+    // return str.replace(/\s+/g, '');
     // return str.split(" ").join('');
  }
 
@@ -156,34 +159,36 @@ console.log('------------------ get Family Name ----------------');
 console.log(getFamilyName('John')); //Output: 'invalid name';
 console.log(getFamilyName('Barack Obama')); //Output: 'Obama';
 function getFamilyName(fullName) {
+    const nev = fullName.split(' ');
+    if (nev.length == 2) {
+    return nev[1];
+    } else {
+    return 'invalid name';
+    }
+
     if(fullName.indexOf(' ') !== -1) {
         return fullName.slice(fullName.indexOf(" ") + 1);
     }
     else{
         return 'invalid name';
     }
-const nev = fullName.split(' ');
-    if (nev.length == 2) {
-    return nev[1];
-    } else {
-    return 'invalid name';
-    }
-function getFamilyName(fullName) {
-    // Eltávolítja a szóközöket a név elejéről és végéről
-    const parts = fullName.trim().split(/\s+/g); //trim(): Eltávolítja az esetleges kezdő és záró szóközöket.
-    //split(/\s+/): Szóközökkel való elválasztás, és bármilyen számú szóköz kezelése.
+}
 
-    if (parts.length === 2) { // Ellenőrzi, hogy a név pontosan két részből áll-e (keresztnév és családnév).
-
-    // Visszaadja a második részt (családnév)
-    return parts[1];
-    } else {
-    // Visszaadja az 'invalid name' szöveget, ha a név nem két részből áll
-    return 'invalid name';
-    }
-    }
-
+// function getFamilyName(fullName) {
+//     // Eltávolítja a szóközöket a név elejéről és végéről
+//     const parts = fullName.trim().split(/\s+/g); //trim(): Eltávolítja az esetleges kezdő és záró szóközöket.
+//     //split(/\s+/): Szóközökkel való elválasztás, és bármilyen számú szóköz kezelése.
+    
+//     if (parts.length === 2) { // Ellenőrzi, hogy a név pontosan két részből áll-e (keresztnév és családnév).
+    
+//     // Visszaadja a második részt (családnév)
+//     return parts[1];
+//     } else {
+//     // Visszaadja az 'invalid name' szöveget, ha a név nem két részből áll
+//     return 'invalid name';
+//     }
+//     }
+    
     // Tesztelés
     console.log(getFamilyName('John')); // Kimenet: 'invalid name'
     console.log(getFamilyName('Barack Obama')); // Kimenet: 'Obama'
- }
