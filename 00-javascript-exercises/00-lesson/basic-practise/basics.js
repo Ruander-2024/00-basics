@@ -8,23 +8,21 @@
  * Hajtsa végre az adott műveletet a függvény a két számom
  * A függvény visszatérési értéke legyen a művelet eredménye
  */
- console.log('---------Első feladat-------');
- 
+console.log('---------Első feladat-------');
 
 
 function calculate(type, num1, num2){
-    // TODO
-    if  ( type  ===  'add' )  {
-        return  num1  +  num2 ;
+    if (type === 'add') {
+        return num1 + num2;
     }
-    else  if ( type  ===  'sub' ) {
-        return  num1  -  num2 ;
+    else if(type === 'sub'){
+        return num1 - num2;
     }
-    else  if ( type  ===  'osztva' ) {
-        return  num1  /  num2 ;
+    else if(type === 'divide'){
+        return num1 / num2;
     }
-    else  if ( type  ===  'multi' ) {
-        return  num1  *  num2 ;
+    else if(type === 'multi'){
+        return num1 * num2;
     }
 }
 

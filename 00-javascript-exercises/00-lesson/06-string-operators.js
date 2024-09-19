@@ -49,4 +49,3 @@ let firstName = "Ben"
 let job = "Frontend developer"
 console.log(firstName + " is a " + job + " at Microsoft.");
 console.log(`${firstName} is a ${job} at Microsoft.`);
-

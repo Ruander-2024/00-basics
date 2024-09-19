@@ -1,3 +1,50 @@
+// for ciklusok
+
+for(let i = 0; i <= 5; i++) {
+    // console.log(i);
+    // 0 - 5
+}
+
+for (let i = 0; i < 5; i++) {
+    // console.log(i);
+    // 0 - 4
+}
+
+for (let i = 1; i <= 5; i++) {
+    // console.log(i);
+    // 1 - 5
+}
+
+for (let i = 0; i <= 5; i+=2) {
+    // console.log(i);
+    // 0, 2, 4
+}
+
+for (let i = 5; i >= 0; i--) {
+    // console.log(i);
+    // 5 - 0
+}
+
+// Tömbökkel
+
+const nums = [10, 23, 35, 46, 58];
+
+for (let i = 0; i < nums.length; i++) {
+    console.log(nums[i]);
+    // 10, 23, 35, 46, 58
+}
+
+for (let i = nums.length - 1; i >= 0; i--) {
+    // console.log(nums[i]);
+    // 58, 46, 35, 23, 10
+}
+
+// for of - Akkor használjuk, amikor nincsen szükség az indexre, csak a tömbben található értékre
+for (const num of nums) {
+    console.log(num);
+}
+
+// Switch - case
 console.log('Switch - case');
 
 function calculate(type, num1, num2){
@@ -62,7 +109,7 @@ for(let i = 1; i <= 3; i++){
     let line = '';
     console.log(i);
     for(let j = 1; j <= 3; j++){
-        line = line + j;
+        line = line + j; // line += j
     }
     console.log(line);
 }
@@ -92,7 +139,7 @@ console.log();
 for(let i = 1; i <= 5; i++){
     let line = '';
     for(let j = 1; j <= i; j++){
-    line = line + j;
+    line = line + j; // line += j
     }
     console.log(line);
 }
@@ -113,7 +160,7 @@ for(let i = 1; i <= 5; i++){
     console.log(line);
 }
 
- 
+console.log();
 
 //     1 * 1 = 1
 //     1 * 2 = 2
@@ -125,7 +172,6 @@ for(let i = 1; i <= 5; i++){
 //     1 * 8 = 8
 //     1 * 9 = 9
 //     1 * 10 = 10
-
 
 //     2 * 1 = 2
 //     2 * 2 = 4
@@ -139,8 +185,49 @@ for(let i = 1; i <= 5; i++){
 //     2 * 10 = 20
 
 for (let i = 1; i <= 2; i++) {
+
     for (let j = 1; j <= 10; j++) {
-    console.log(`${i} * ${j} = ${i * j}`);
+        console.log(i +" * "+ j +" = "+ i * j);
+        // console.log(`${i} * ${j} = ${i*j}`);
+        
     }
+
     console.log();
+
+}
+
+// -------------------------------
+// 1 2 3 4 5
+// 1 2 3 4
+// 1 2 3
+// 1 2
+// 1
+
+for(let i = 5; i >= 1; i--){
+    let line = '';
+    for(let j = 1; j <= i; j++) {
+        line = line + j + ' '; // line += j + ' ';
     }
+    console.log(line);
+}
+
+console.log();
+
+// -------------------------------
+// 5
+// 4 5
+// 3 4 5
+// 2 3 4 5
+// 1 2 3 4 5
+
+for (let i = 5; i >= 1; i--) {
+    let line = '';
+    for(let j = i; j <= 5; j++){
+        line = line + j + ' '; // line += j + ' ';
+    }
+    console.log(line);
+    
+}
+
+console.log();
+

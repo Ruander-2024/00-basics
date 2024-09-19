@@ -1,14 +1,15 @@
 // változó var
-console.log("---- Var változó ----");
+console.log(" ----- Var változó -----");
 
 var number = 20;
 
 console.log(number);
 
+
 // Hoisting
 
 var x;
-
+var x = 30;
 console.log(x);
 
 /// Let változó
@@ -36,7 +37,6 @@ console.log(WEB_URL);
 
 console.log(" ----- Scope változó -----");
 
-
 function addNum(){
     console.log(WEB_URL);
     var localVar = 23;
@@ -52,4 +52,3 @@ function addNum(){
 // console.log(blockVar); Kívülről nem tudjuk elérni, csak a függvényen belül
 
 addNum();
-

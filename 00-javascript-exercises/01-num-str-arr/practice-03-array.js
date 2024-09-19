@@ -7,14 +7,21 @@
 //-3
 
 function sumArray(myArray) {
+    // Az elemek összegzése
+    let sum = 0;
+    
+    // Végigmegyünk a tömb elemein és hozzáadjuk őket a sum változóhoz
+    for (let i = 0; i < myArray.length; i++) {
+      sum += myArray[i];
+    }
+  
+    return sum;
+  }
+  
 
-    //TODO
-
-};
-
-// console.log(sumArray([10, 32, 20]));
-// console.log(sumArray([5, 7, 9]));
-// console.log(sumArray([0, 8, -11]));
+console.log(sumArray([10, 32, 20]));
+console.log(sumArray([5, 7, 9]));
+console.log(sumArray([0, 8, -11]));
 
 
 //*************************************************** SECOND *************************************************** */
@@ -28,14 +35,14 @@ function sumArray(myArray) {
 //false
 
 function findThree(myArray) {
+    let first = [myArray.length - 1];
+    let last = [myArray.length - 0];
+    return 
+}
 
-    //TODO
-
-};
-
-// console.log(findThree([3, 7, 5]));
-// console.log(findThree([1, 3, 5, 3]));
-// console.log(findThree([2, 4, 6]));
+console.log(findThree([3, 7, 5]));
+console.log(findThree([1, 3, 5, 3]));
+console.log(findThree([2, 4, 6]));
 
 
 //*************************************************** THIRD *************************************************** */

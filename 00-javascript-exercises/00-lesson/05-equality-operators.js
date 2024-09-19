@@ -1,4 +1,4 @@
-  // Összehasonlító operátorok és elágazások
+// Összehasonlító operátorok és elágazások
 // ==, ===, !, !=, !==, >=, <=, <, >
 // || (OR), && (AND)
 

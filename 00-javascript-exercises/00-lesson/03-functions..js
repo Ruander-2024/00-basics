@@ -3,8 +3,8 @@
 const sumOfAgesWomen = getSumAges("30", "28", "53");
 const sumOfAgesMen = getSumAges(73, 12, 34);
 
-console.log(sumOfAgesMen);
 console.log(sumOfAgesWomen);
+console.log(sumOfAgesMen);
 
 function getSumAges(age1, age2, age3){
     // Függvény body
