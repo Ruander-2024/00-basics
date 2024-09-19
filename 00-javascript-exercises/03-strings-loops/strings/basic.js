@@ -2,7 +2,7 @@ console.log('---------------- Concat string -------------------');
 
 // Készíts egy metódust, ami összefűz két stringet egy stringgé
 
-console.log(concatStrings('we are ', 'heroes')); //Output: 'We are heroes'
+console.log(concatStrings('we are ', 'heroes')); //Output: 'we are heroes'
 console.log(concatStrings('camel', 'Case')); //Output: 'camelCase'
 function concatStrings(str1, str2) {
     let word = ''; // szó
@@ -174,20 +174,20 @@ function getFamilyName(fullName) {
     }
 }
 
-function getFamilyName(fullName) {
-    // Eltávolítja a szóközöket a név elejéről és végéről
-    const parts = fullName.trim().split(/\s+/g); //trim(): Eltávolítja az esetleges kezdő és záró szóközöket.
-    //split(/\s+/): Szóközökkel való elválasztás, és bármilyen számú szóköz kezelése.
+// function getFamilyName(fullName) {
+//     // Eltávolítja a szóközöket a név elejéről és végéről
+//     const parts = fullName.trim().split(/\s+/g); //trim(): Eltávolítja az esetleges kezdő és záró szóközöket.
+//     //split(/\s+/): Szóközökkel való elválasztás, és bármilyen számú szóköz kezelése.
     
-    if (parts.length === 2) { // Ellenőrzi, hogy a név pontosan két részből áll-e (keresztnév és családnév).
+//     if (parts.length === 2) { // Ellenőrzi, hogy a név pontosan két részből áll-e (keresztnév és családnév).
     
-    // Visszaadja a második részt (családnév)
-    return parts[1];
-    } else {
-    // Visszaadja az 'invalid name' szöveget, ha a név nem két részből áll
-    return 'invalid name';
-    }
-    }
+//     // Visszaadja a második részt (családnév)
+//     return parts[1];
+//     } else {
+//     // Visszaadja az 'invalid name' szöveget, ha a név nem két részből áll
+//     return 'invalid name';
+//     }
+//     }
     
     // Tesztelés
     console.log(getFamilyName('John')); // Kimenet: 'invalid name'
