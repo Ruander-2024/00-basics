@@ -1,29 +1,27 @@
-/**
- * ---Első feladat---
- * Készíts egy el egyszerű számológépet
- * Adott egy "calculator" függvény mely három paramétert vár:
- * 1. művelet elnevezése, amely négy értéket vehet fel: "add", "sub", "divide", "multi" (összeadás, kivonás, osztás, szorzás)
- * 2. paraméter egy tetszőleges szám
- * 3. paraméter egy tetszőleges szám
- * Hajtsa végre az adott műveletet a függvény a két számom
- * A függvény visszatérési értéke legyen a művelet eredménye
- */
 console.log('---------Első feladat-------');
 
-
+/*
+Készíts egy el egyszerű számológépet
+Adott egy "calculator" függvény mely három paramétert vár:
+1. művelet elnevezése, amely négy értéket vehet fel: "add", "sub", "divide", "multi" (összeadás, kivonás, osztás, szorzás)
+2. paraméter egy tetszőleges szám
+3. paraméter egy tetszőleges szám
+Hajtsa végre az adott műveletet a függvény a két számom
+A függvény visszatérési értéke legyen a művelet eredménye
+*/
+ 
 function calculate(type, num1, num2){
-    if (type === 'add') {
-        return num1 + num2;
+    if (type === 'add') {               // type = összeadás
+        return num1 + num2;             // visszatérési érték szám1 + szám2  
     }
-    else if(type === 'sub'){
-        return num1 - num2;
+    else if(type === 'sub'){            // type = kivonás
+        return num1 - num2;             // visszatérési érték szám1 - szám2  
     }
-    else if(type === 'divide'){
-        return num1 / num2;
+    else if(type === 'divide'){         // type = osztás
+        return num1 / num2;             // visszatérési érték szám1 / szám2  
     }
-    else if(type === 'multi'){
-        return num1 * num2;
-    }
+    else if(type === 'multi')             // type = szorzás
+        return num1 * num2;             // visszatérési érték szám1 * szám2  
 }
 
 console.log(calculate('add', 30, 50.5)) // 80,5
@@ -31,6 +29,7 @@ console.log(calculate('sub', 30, -21)) // 51
 console.log(calculate('divide', 30, 6)) // 5
 console.log(calculate('multi', 30, 7)) // 210
 
+console.log('---------Második feladat-------');
 
 /**
  * --- Második feladat -------
@@ -45,12 +44,39 @@ console.log(calculate('multi', 30, 7)) // 210
  * Ezt a paraméter vizsgálatot szerevezd ki egy külön függvénybe, és hívd meg
  * a "calculate" függvény megfelelő helyén
  */
-console.log('---------Második feladat-------');
 
+function Operation(type, num1, num2) {
+    const Operations = ['add', 'sub', 'divide', 'multi'];          // létrehozunk egy változót amit nem lehet megváltoztatni
+      // ellenőrizzük hogy a type tartalmazza e a megadott tömb elemeit és hogy a szám1 és szám2 tényleg szám e
+    if (!Operations.includes(type) || typeof num1 == 'number' || typeof num2 == 'number') {     
+      return true;                                                 // ha igen a visszatérési értéke igaz
+    }
+      return false;                                                  // ha nem a visszatérési értéke hamis
+    }
+  
+  function calculate(type, num1, num2) {
+    if (!Operation(type, num1, num2)) {
+      return "Invalid operation";
+    }
+    switch (type) {
+      case 'add':
+        return num1 + num2;
+      case 'sub':
+        return num1 - num2;
+      case 'divide':
+        return num1 / num2;
+      case 'multi':
+        return num1 * num2;
+      default:
+        return "Invalid operation";
+    }
+  }
+  
 console.log(calculate('fault', 30, 30)) // "Invalid operation"
 console.log(calculate('fault', 'dk2', 30)) // "Invalid operation"
 console.log(calculate('fault', 21, true)) // "Invalid operation"
 
+console.log('---------Harmadik feladat-------');
 
 /**
  * --- Harmadik feladat -------
@@ -58,14 +84,14 @@ console.log(calculate('fault', 21, true)) // "Invalid operation"
  * Készíts egy függvény, ami kivágja a számokat az elejéről és visszaadja csak a betűket
  *
  */
- console.log('---------Harmadik feladat-------');
-
 
 function getIDCardLetters(idCardNumber) {
-    // TODO
+    return idCardNumber.slice(-2);
 }
 
 console.log(getIDCardLetters('123456AB')) // 'AB'
+
+console.log('---------Negyedik feladat-------');
 
 /**
  * --- Negyedik feladat -------
@@ -76,16 +102,20 @@ console.log(getIDCardLetters('123456AB')) // 'AB'
  * 'AB with odd number' vagy 'AB with even number'
  *
  */
- console.log('---------Negyedik feladat-------');
 
-
-function checkIdCardNumberIsEven(){
-    // TODO
+function checkIdCardNumberIsEven(num){
+    let szam = num.match(/\d+/g) 
+    if(szam % 2 == 0){
+        return 'AB with even number';
+   }
+    else 
+       return 'AB with odd number';
 }
 
 console.log(checkIdCardNumberIsEven('123456AB')) // 'AB with even number'
 console.log(checkIdCardNumberIsEven('123457AB')) // 'AB with odd number'
 
+console.log('---------Ötödik feladat-------');
 
 /**
  * Ötödik feladat
@@ -98,16 +128,21 @@ console.log(checkIdCardNumberIsEven('123457AB')) // 'AB with odd number'
  *
  * pl: "Indul a görög hazafelé"  ==> 'bfelé'
  */
- console.log('---------Ötödik feladat-------');
-
 
 function formatString(str){
-    // TODO
-
+    let szokoz = str.replace(/ /g, '');
+    //  return szokoz;
+    let utolso = szokoz.slice(-5);
+    //  return utolso;
+    let veg = utolso.replace(/a/g, 'b');
+        return veg;
+   
 }
 
 console.log(formatString("Indul a görög haza felé")); // 'bfelé'
 console.log(formatString("Ha ha haaa")); // 'bhbbb'
+
+console.log('---------Szorgalmi feladat-------');
 
 /**
  * Szorgalmi feladat
@@ -115,11 +150,14 @@ console.log(formatString("Ha ha haaa")); // 'bhbbb'
  * Távolitson el belőlen minden '.' vagy üres szóköz paramétert.
  * Ha van benne számot rejtő karakter, akkor cserélje ki az 'x' karakterre
  */
- console.log('---------Szorgalmi feladat-------');
 
+ function removeDigitsDotAndSpaces(input) {
+ 
+    const cleanedString = input.replace(/[. ]/g, '');
 
-function removeDigitsDotAndSpaces(str){
-    // TODO
+    const result = cleanedString.replace(/\d/g, 'x');
+
+    return result;
 }
 
 console.log(removeDigitsDotAndSpaces('abc123.dba 87')) // 'abcxxxdbaxx'

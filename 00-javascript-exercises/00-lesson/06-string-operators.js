@@ -13,8 +13,8 @@ console.log(userName); //* Nem megváltoztatható!!
 console.log(userName.substring(0, 4)); // 0. karaktertől a 4-ig, de a 4. nincsen benne
 console.log(userName.substring(4)); // A 4-től a végéig és a 4-es is benne van
 
-// userName = userName.substring(4); // Így felül lehet írni
-// console.log(userName);
+userName = userName.substring(4); // Így felül lehet írni
+console.log(userName);
 
 //Slice
 console.log(userName.slice(2, 6)); // 2. karakter benne van, a 6. pedig nincsen
