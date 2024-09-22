@@ -1,63 +1,43 @@
-//*************************************************** FIRST *************************************************** */
+console.log('*************************************************** FIRST ***************************************************');
 
 //Írj meg egy programot, amely a paraméterben kapott számszor adja vissza a paraméterben kapott szót.
 
 function multipleString(word, number) {
   return word.repeat(number);
-};
+}
 
+console.log(multipleString("elephant", 3));     // elephantelephantelephant  
+console.log(multipleString("mouse", 4));        // mousemousemousekouse
 
-
-console.log(multipleString("elephant", 3));
-console.log(multipleString("mouse", 4));
-console.log();
-
-
-//*************************************************** SECOND *************************************************** */
+console.log('*************************************************** SECOND **************************************************');
 
 //Paraméterben kap egy szót és egy betűt. Ha a szó tartalmazza ezt a karaktert, akkor a programod
 //adja vissza az indexét. Ha nem tartalmazza, akkor adjon vissza -1-et.
-
-//Eredmény:
-//0
-//4
-//-1
 
 function countCharacter(word, char) {
     return word.indexOf(char);
 }
 
+console.log(countCharacter("mouse", "m"));   // 0
+console.log(countCharacter("number", "e"));  // 4
+console.log(countCharacter("sunday", "g"));  // -1
 
-
-console.log(countCharacter("mouse", "m"));
-console.log(countCharacter("number", "e"));
-console.log(countCharacter("sunday", "g"));
-console.log();
-
-
-//*************************************************** THIRD *************************************************** */
+console.log('*************************************************** THIRD ***************************************************');
 
 //Paraméterben kap a funkció egy stringet. Írj egy programot, amely visszaad egy új stringet, amely tartalmazza
 //az eredeti szót, és hozzáteszi az eredeti szó első betűjét a szó elejére és végére.
 //Pl: paraméterben kapott szó: dog --> várt eredmény: ddogd
-
-//Eredmény:
-//ccatc
-//mmousem
 
 function frontAndBack(word) {
   let elso = word.charAt(0);
   return elso + word + elso;
 }
  
-console.log(frontAndBack('dog'));
-console.log(frontAndBack('cat'));
-console.log(frontAndBack('mouse'));
-console.log();
+console.log(frontAndBack('dog'));   // ddogd
+console.log(frontAndBack('cat'));   // ccatc
+console.log(frontAndBack('mouse')); // mmousem
 
-
-//*************************************************** FOURTH *************************************************** */
-
+console.log('*************************************************** FOURTH ***************************************************');
 
 //Írj egy programot az előző feladat mintájára, de most ne az első betűt, hanem az utolsó három karaktert
 //tedd be visszaadtott szó elejére és végére. 
@@ -69,25 +49,17 @@ function addThree(word) {
   if(word.length >= 3){
   return elso + word + elso
 }
-else
   return word; 
 }
 
-console.log(addThree("abc"));
-console.log(addThree("ab"));
-console.log(addThree("abcd"));
-console.log()
+console.log(addThree("abc"));    // abcabcabc
+console.log(addThree("ab"));     // ab
+console.log(addThree("abcd"));   //bcdabcdbcd
 
-
-//*************************************************** FIFTH *************************************************** */
+console.log('*************************************************** FIFTH ***************************************************');
 
 //Írj egy programot, amely összefűzve visszaad két stringet, az első karaktereiket kivéve. 
 //Példa: dog, cat --> eredmény: ogat
-
-//Eredmény:
-//""
-//ee
-
 
 function concatenateStrings(word1, word2) {
   let first = word1.substring(1);
@@ -95,13 +67,11 @@ function concatenateStrings(word1, word2) {
 return first + secund;
 }
 
-console.log(concatenateStrings("dog", "cat"));
-console.log(concatenateStrings("X", "Y"));
-console.log(concatenateStrings("we", "me"));
-console.log()
+console.log(concatenateStrings("dog", "cat"));  // ogat
+console.log(concatenateStrings("X", "Y"));      // ""
+console.log(concatenateStrings("we", "me"));    // ee
 
-
-//*************************************************** SIXTH *************************************************** */
+console.log('*************************************************** SIXTH ***************************************************');
 
 //Írj egy funkciót, amely visszaadja a paraméterben kapott szóban a paraméterben kapott sorszámú karaktert.
 //A kapott index értéke minden esetben kisebb, mint a szó hossza. 
@@ -111,21 +81,18 @@ function findChar(word, index) {
   return first;
 }
 
-console.log(findChar("Auto", 2));
-console.log(findChar("Printer", 4));
-console.log(findChar("Jaguar", 5));
-console.log()
+console.log(findChar("Auto", 2));     // t
+console.log(findChar("Printer", 4));  // t
+console.log(findChar("Jaguar", 5));   // r
 
-
-//*************************************************** SEVENTH *************************************************** */
+console.log('*************************************************** SEVENTH ***************************************************'),
 
 //Írj egy programot, amely megszámolja a paraméterben kapott szóban a magánhangzók számát.
 //Angol szavakat használunk, így az angol abc magánhangzóit vizsgáld meg.
 
-//Eredmény:
-//3
-//2
-//3
+console.log(countVowels("Auto"));      // 3
+console.log(countVowels("Printer"));   // 2
+console.log(countVowels("Jaguar"));    // 3
 
 function countVowels(word) {
   let vowels = "aeiouAEIOU";
@@ -134,11 +101,7 @@ function countVowels(word) {
     if (vowels.includes(word[i])) {
       count++;
     }
+   
   }
   return count;
 }
-
-
-console.log(countVowels("Auto"));
-console.log(countVowels("Printer"));
-console.log(countVowels("Jaguar"));

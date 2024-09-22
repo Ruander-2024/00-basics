@@ -108,7 +108,6 @@ function checkIdCardNumberIsEven(num){
     if(szam % 2 == 0){
         return 'AB with even number';
    }
-    else 
        return 'AB with odd number';
 }
 
@@ -153,11 +152,11 @@ console.log('---------Szorgalmi feladat-------');
 
  function removeDigitsDotAndSpaces(input) {
  
-    const cleanedString = input.replace(/[. ]/g, '');
+    const torol = input.replace(/[. ]/g, '');
 
-    const result = cleanedString.replace(/\d/g, 'x');
+    const csere = torol.replace(/\d/g, 'x');
 
-    return result;
+    return csere;
 }
 
 console.log(removeDigitsDotAndSpaces('abc123.dba 87')) // 'abcxxxdbaxx'
