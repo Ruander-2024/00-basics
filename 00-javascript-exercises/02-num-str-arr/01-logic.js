@@ -3,18 +3,15 @@
 //We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
 //alszunk ha nincs hétköznap vagy hétvége van.
 
-// A hétköznap paraméterünk igaz, ha hétköznap van.
-// A nyaralunk paraméter igaz, ha nyaralunk van.
-// Ha nem hétköznap van, vagy nyaralunk, akkor alszunk. Térjünk vissza true értékkel alszunk.
 
 function sleepIn(weekday, vacation) {
-    if(weekday == false || vacation == true){
+    if (!weekday) { // Ha nem hétköznap van
         return true;
-    }
-    else{
+    } else if (vacation) { // Ha vakáción vagyunk
+        return true;
+    } else { // Ha hétköznap van és nem vagyunk vakáción
         return false;
     }
-
 }
 
 console.log(sleepIn(false, false)); // true
@@ -28,47 +25,15 @@ console.log(sleepIn(false, true)); // true
 //of them is smiling. Return true if we are in trouble.
 //Van két majmunk ha mindkettő mosolyog vagy egyik sem akkor bajban vagyunk (true), különben (false).
 
-// function monkeyTrouble(aSmile, bSmile) {
-    // if(aSmile == true || bSmile == true){
-    //     return true;
-    // }                                                saját szar
-   
-    //  if(aSmile == false || bSmile == false){
-    //     return true;
-    // }
-    // if(aSmile == true || bSmile == false){
-    //     return false;
-    // }
-    
-    function monkeyTrouble(aSmile, bSmile) {                // Márké
-        let result;
-        do {
-        result = (aSmile === bSmile);
-        } while (false);
-        return result;
-        }
-    
-        function monkeyTrouble(aSmile, bSmile) {
-            if (aSmile == true && bSmile == true || aSmile == false && bSmile == false) {
-                return true;
-            }
-            else{
-                return false;
-            }
-    
-    
-        }
-
-
-    // function monkeyTrouble(aSmile, bSmile) {
-    //     if(aSmile == true && bSmile == true || aSmile == false && bSmile == false){              // Kriszti
-    //     return true;
-    //     }
-    //     else
-    //     return false;
-    //     }
-
-
+function monkeyTrouble(aSmile, bSmile) {
+    if (aSmile && bSmile) { // Ha mindkét majom mosolyog
+        return true;
+    } else if (!aSmile && !bSmile) { // Ha egyik majom sem mosolyog
+        return true;
+    } else { // Ha az egyik mosolyog, a másik nem
+        return false;
+    }
+}
 
 console.log('monkeyTrouble');
 console.log(monkeyTrouble(true, true)); // true
@@ -80,27 +45,12 @@ console.log(monkeyTrouble(true, false)); // false
 //then return double their sum.
 
 function sumDouble(a, b) {
-    if(a == b ){
-    return(a+b)*2;                   // Kriszti
+    if (a === b) { // Ha a két érték megegyezik
+        return 2 * (a + b); // Dupla összeg
+    } else { // Ha nem egyeznek meg
+        return a + b; // Csak az összeg
     }
-    else return a+b;
 }
-
-// function sumDouble(a, b) {             // Eszti        
-//     let sum = 0;
-    
-//     do {
-//     sum = a + b;
-//     if (a === b) {
-//     sum = 2 * sum;
-//     }
-//     } while (false);
-    
-//     return sum;
-//     }
-
-
-
 
 console.log('sumDouble');
 console.log(sumDouble(1, 2)); // 3
@@ -114,18 +64,12 @@ console.log(sumDouble(2, 2)); // 8
 // Van egy papagájunk a hour a valós idő, ha 7 óra előtt vagy 20 óra után beszél bajban vagyunk.
 
 function parrotTrouble(talking, hour) {
-
-    if(talking === true && hour < 7 || hour > 20 ){             // Dani 
-        return true;
-        } else {
-        return false;
-        }    
-
+    if (talking && (hour < 7 || hour > 20)) { // Ha a papagáj beszél, és az idő 7 előtt vagy 20 után van
+        return true; // Bajban vagyunk
+    } else { // Ha nem beszél a papagáj, vagy az idő 7 és 20 között van
+        return false; // Nem vagyunk bajban
+    }
 }
-
-// function parrotTrouble(talking, hour) {
-//     return talking && (hour < 7 || hour > 20);
-// }
 
 console.log('parrotTrouble');
 console.log(parrotTrouble(true, 6)); // true
@@ -137,13 +81,12 @@ console.log(parrotTrouble(false, 6)); // false
 //Except if the parameter "negative" is true, then return true only if both are negative.
 
 function posNeg(a, b, negative) {
-    if( a === -a && b === -b && negative === true ){
-    return false
-    } else{
-    return true
+    if (negative) { // Ha a "negative" paraméter igaz
+        return a < 0 && b < 0; // Akkor mindkét számnak negatívnak kell lennie
+    } else { // Ha a "negative" paraméter hamis
+        return (a < 0 && b > 0) || (a > 0 && b < 0); // Az egyik szám legyen negatív, a másik pozitív
     }
-    
-    }
+}
 
 console.log('posNeg');
 console.log(posNeg(1, -1, false)); // true
@@ -156,8 +99,11 @@ console.log(posNeg(-4, -5, true)); // true
 //Use the % "mod" operator
 
 function or35(number) {
-
-
+    if (number % 3 === 0 || number % 5 === 0) { // Ha a szám osztható 3-mal vagy 5-tel
+        return true; // Akkor igaz
+    } else { // Ha egyik sem igaz
+        return false; // Akkor hamis
+    }
 }
 
 console.log('or35');
@@ -171,9 +117,19 @@ console.log(or35(8)); // false
 //If the string length is less than 2, use whatever chars are there.
 
 function front22(str) {
-
-
+    let elsoKetto;
+    
+    // Ellenőrizzük, hogy a string hossza 2 vagy több-e
+    if (str.length >= 2) {
+        elsoKetto = str.substring(0, 2); // Az első 2 karakter kivétele
+    } else {
+        elsoKetto = str; // Ha a string rövidebb mint 2, az egész stringet vesszük
+    }
+    
+    // Visszaadjuk az új stringet, ahol az első két karakter az elején és a végén is hozzá van adva
+    return elsoKetto + str + elsoKetto;
 }
+
 console.log('front22');
 console.log(front22("kitten")); // "kikittenki"
 console.log(front22("Ha")); // "HaHaHa"
@@ -183,9 +139,14 @@ console.log(front22("abc")); // "ababcab"
 //Given two temperatures, return true if one is less than 0 and the other is greater than 100.
 
 function icyHot(temp1, temp2) {
-
-
+    // Ellenőrizzük, hogy az egyik hőmérséklet kisebb-e mint 0, és a másik nagyobb-e mint 100
+    if ((temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0)) {
+        return true; // Ha igen, akkor visszatérünk true-val
+    } else {
+        return false; // Ha nem, akkor false-t adunk vissza
+    }
 }
+
 console.log('icyHot');
 console.log(icyHot(120, -1)); // true
 console.log(icyHot(-1, 120)); // true
@@ -196,8 +157,14 @@ console.log(icyHot(2, 120)); // false
 //Given 3 values, return true if 1 or more of them are teen.
 
 function isTeen(a, b, c) {
-
+    // Ellenőrizzük, hogy bármelyik szám 13 és 19 közötti-e (beleértve a határokat)
+    if ((a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19)) {
+        return true;  // Ha bármelyik szám tinédzser, visszatérünk true-val
+    } else {
+        return false; // Ha egyik sem tinédzser, akkor false-t adunk vissza
+    }
 }
+
 console.log('isTeen');
 console.log(isTeen(13, 20, 10)); // true
 console.log(isTeen(20, 19, 10)); // true
