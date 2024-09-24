@@ -5,9 +5,10 @@
 // Használnunk kell a "modulo osztást", jele a '%' : példa: 5 % 2     // Output: 1
 // Sima osztás eredménye egész számra "kerekítődik": példa: 7 / 2    //Output 3
 
-//console.log(checkNumberIsEven(3))             //Output: false
-//console.log(checkNumberIsEven(4))             //Output: true
+console.log(checkNumberIsEven(3))             //Output: false
+console.log(checkNumberIsEven(4))             //Output: true
 function checkNumberIsEven(num) {
+    return num % 2 === 0;
 
 }
 console.log(checkNumberIsEven(10));
@@ -147,6 +148,8 @@ function printBiggerListSize(list1, list2) {
 }
 console.log(printBiggerListSize([3, 2, 1], [false, 4, 7, 8]));
 console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
+console.log();
+
 
 
 //FELADAT kapsz két listát, ha egyenlő a méretűk és az első számjegyük vagy a méretük és az utolsó számjegyük,
@@ -164,6 +167,13 @@ console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
 
 
 function checkSimilarList(list1, list2) {
+    if (list1.length === list2.length && (list1[0] === list2[0] || list1[list1.length - 1] === list2[list2.length - 1])) {
+        return 'similar';
+    } 
+    else 
+    {
+        return 'not similar';
+    }
 
 }
 

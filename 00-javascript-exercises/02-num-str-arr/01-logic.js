@@ -129,8 +129,7 @@ function sleepIn(weekday, vacation) {
     //Használd a % operátort
     
     function or35(number) {
-    
-    
+        return number % 3 ===0 || number % 5 ===0;
     }
     
     console.log('or35');
@@ -147,10 +146,17 @@ function sleepIn(weekday, vacation) {
     //a szó elején és a végén, vagyis "kitten"-ből lesz "kikittenki"
     //Ha a string hossza nem haladja meg a 2 hosszúságot, akkor ismételje ugyan úgy a karaktereket
     
-    function front22(str) {
-    
-    
-    }
+        function front22(str) {
+            if(str.length >= 2){
+            return str.substring(0, 2) + str + str.substring(0, 2)
+            
+            } 
+            else {
+            return str;        
+        }
+            
+            
+        }
     console.log('front22');
     console.log(front22("kitten")); // "kikittenki"
     console.log(front22("Ha")); // "HaHaHa"
@@ -178,7 +184,13 @@ function sleepIn(weekday, vacation) {
     //Kapunk 3 értéket és ha legalább az egyik tinédzser kor, akkor adjunk vissza true-t.
     
     function isTeen(a, b, c) {
-    
+        if(a,b,c <= 13 && a,b,c <=19){
+            return true
+        } 
+        else{
+          return false
+        }
+            
     }
     console.log('isTeen');
     console.log(isTeen(13, 20, 10)); // true
