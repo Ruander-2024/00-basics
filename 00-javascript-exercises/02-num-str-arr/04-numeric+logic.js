@@ -19,6 +19,7 @@ console.log(checkNumberIsEven(45));
 //ha egyikkel sem, írja ki 'false'
 //ha mindkettővel akkor írja ki 'both';
 //egyéb esetben írja ki a paraméterben megadott számot
+console.log();
 
 //console.log(checkNumberDivisionByTwoOrThree(2))       Output: 2
 //console.log(checkNumberDivisionByTwoOrThree(6))       Output: 'both'
@@ -26,8 +27,15 @@ console.log(checkNumberIsEven(45));
 //console.log(checkNumberDivisionByTwoOrThree(9))       Output: 9
 
 function checkNumberDivisionByTwoOrThree(num) {
-
-
+    if(num % 2 === 0 && num % 3 === 0){
+        return 'both';
+    }
+    else{
+        if(num % 2 !== 0 && num % 3 !== 0){
+            return "false";
+        }
+    }
+    return num;
 }
 console.log(checkNumberDivisionByTwoOrThree(2))
 console.log(checkNumberDivisionByTwoOrThree(6))
@@ -40,6 +48,7 @@ console.log(checkNumberDivisionByTwoOrThree(9))
 //Megjegyzés: ha több feltételt akarok vizsgálni és fontos,
 //hogy mindegyik oldal teljesüljön, akkor a '&&' jelet kell használnom.
 //Példa: ha vizsgálom hogy két szám megegyezik és nagyobb nullánál: szam1 === szam2 && szam1 > 0
+console.log();
 
 
 //Output: false
@@ -47,15 +56,22 @@ console.log(checkNumberDivisionByTwoOrThree(9))
 //Output: false
 
 function addTwoPositivNumber(num1, num2) {
-
+    if(num1 > 0 && num2 > 0){
+        return num1 + num2;
+    }
+    else{
+        return 'false'
+    }
 }
 
 console.log(addTwoPositivNumber(2, -4));
 console.log(addTwoPositivNumber(2, 4));
 console.log(addTwoPositivNumber(-2, -4));
 
+console.log();
 
 //FELADAT: Vizsgálja meg hogy a kapott két paraméter között van e páratlan szám?
+console.log();
 
 //Megjegyzés: ha úgy akarok több feltételt vizsgálni, hogy elég ha csak valamelyik oldal igaz,
 //akkor a '||' jelet kell használnom.
@@ -65,7 +81,12 @@ console.log(addTwoPositivNumber(-2, -4));
 //Output: false (boolean tipusu visszatérés)
 
 function getOddNumber(num1, num2) {
-
+    if(num1 % 2 !== 0 || num2 % 2 !==0){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 console.info('getOddnumber');
 console.log(getOddNumber(3, 6));
@@ -74,6 +95,7 @@ console.log(getOddNumber(8, 2));
 //FELADAT: egy két-vagy-három elemű listából írja ki a harmadik számjegyét.
 //Ha két számjegyű a lista, akkor adj hozzá egy 0-át, hogy biztosan legyen benne 3 érték.
 //És utána írd ki a 3. jegyet
+console.log();
 
 //Megjegyzés: egy lista deklarálása: var myList = [3,4,5,12]  (bármilyen adatot bele tudok tenni, vegyesen is)
 //Új elem hozzáadása  myList.push(nemElem)   itt, egy változót is adhatok, vagy bármilyen egyéb értéket
@@ -95,6 +117,7 @@ console.log(printThirdNumber([4, 6, 11]));
 //- egy változó (számláló deklarása, bármilyen induló értékkel)
 //- egy feltétel a változóra (tehát amig igaz, addig tart a ciklus)
 //- és egy művelet, a változóval (i++ itt az jelenti, hogy mindig eggyel nővelje értékét)
+console.log();
 
 // Példa: for(var i = 1; i < 4, i++){}    ==> 1, től 3-ig (mig "i" kisebb mint 4) növeli az i értékét
 
@@ -115,6 +138,7 @@ console.log(printAllNumberFromList([3, 2, 1]));
 //hanem csökkenteni is lehet egy értéket (--i)
 //Figyelj arra, hogy a listában az index 1-ról indul, tehát a tömb hossza, mindig 1-el több,
 //mint az utolsó szám indexe
+console.log();
 
 //console.log(printReverse([2,4,6]))              //Output: 6
 //                                                          4
@@ -138,6 +162,7 @@ console.log(printEvenNums([21, 2, 3, 44, 5]));
 
 //FELADAT kapsz két listát, hasonlitsd össze őket, és írd ki a nagyobb lista méretének értékét
 //egyenlőség esetén egyik lista méretét
+console.log();
 
 //Output: 4
 //Output: 3
@@ -152,10 +177,12 @@ console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
 //FELADAT kapsz két listát, ha egyenlő a méretűk és az első számjegyük vagy a méretük és az utolsó számjegyük,
 //akkor írd ki, hogy 'similar'
 //ha nem, akkor 'not similar'
+console.log();
 
 //Megjegyéz: a 'vagy' ('||') vizsgálatot lehet ötvözni az 'és' ('&&') vizsgálattal.
 //érdemes zárójelbe tenni a különböző vizsgálatokat, hogy jobban követhető legyen,
 //hol vannak a határai a vizsgálatoknak
+console.log();
 
 //Output: 'similar'
 //Output: 'not similar'
