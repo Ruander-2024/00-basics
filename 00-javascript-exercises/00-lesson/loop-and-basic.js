@@ -212,3 +212,54 @@ for(let i = 5; i >= 1; i--){
 }
 console.log()
 
+//while-ciklus
+
+//kiiratás hátulról
+const listAges = [30, 40, 12, 26, 57];
+
+let lastIndex = listAges.length-1 //utolsó index
+while (lastIndex >=0 ){
+    console.log(listAges[lastIndex]);
+    lastIndex--;
+}
+console.log("---------------------------------------")
+
+const listAges2 = [30, 40, 12, 26, 57];
+
+for (let lastIndex = listAges2.length - 1;
+     lastIndex >= 0;
+     lastIndex--)
+      {
+    console.log(listAges2[lastIndex]);
+}
+console.log("---------------------------------------")
+
+let i = 0;
+while(i<listAges.length){
+    if (listAges[i] === 26){
+        console.log(`megtaláltuk a ${listAges[i]}-os  elemet`);
+        break;
+    }
+i++;
+console.log("---------------------------------------")
+}
+//Betűk egymás alá kiíratása
+
+const userName = 'John Doe ';
+
+let index2 = 0;
+while(index2<userName.length) {
+    if (userName[index2] !== ' '){
+          console.log(userName[index2])
+    }
+   else{
+     break ;      
+   }   
+   index2++  
+}
+let index4 = userName.length -1 ;
+
+while(userName[index4] !== ' '){
+console.log( userName [index4]);
+index4 --;
+}

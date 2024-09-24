@@ -5,10 +5,14 @@
 
 
 function sleepIn(weekday, vacation) {
-
-
-}
-
+    if(weekday == false || vacation == true){
+        return true;
+    }
+    else{
+        return false;
+    }
+    
+    }
 console.log(sleepIn(false, false)); // true
 console.log(sleepIn(true, false)); // false
 console.log(sleepIn(false, true)); // true
@@ -21,27 +25,53 @@ console.log(sleepIn(false, true)); // true
 //Van két majmunk ha mindkettő mosolyog vagy egyik sem akkor bajban vagyunk (true), különben (false).
 
 function monkeyTrouble(aSmile, bSmile) {
-
-
-
+    let result;
+    do {
+        result = (aSmile === bSmile);
+    } while (false);
+    return result;
 }
+
 console.log('monkeyTrouble');
-console.log(monkeyTrouble(true, true)); // true
+console.log(monkeyTrouble(true, true));   // true
 console.log(monkeyTrouble(false, false)); // true
-console.log(monkeyTrouble(true, false)); // false
+console.log(monkeyTrouble(true, false));  // false
 
 /***********************************************************************************************/
 //Given two values, return their sum. Unless the two values are the same, 
 //then return double their sum.
 
 function sumDouble(a, b) {
-
+    if (a === b) {
+        return 2 * (a + b);
+    } else {
+        return a + b; 
+    }
 }
+
 console.log('sumDouble');
 console.log(sumDouble(1, 2)); // 3
 console.log(sumDouble(3, 2)); // 5
 console.log(sumDouble(2, 2)); // 8
 
+
+function sumDouble(a, b) {
+    let sum = 0;
+    
+    do {
+        sum = a + b; 
+        if (a === b) {
+            sum = 2 * sum; 
+        }
+    } while (false); 
+
+    return sum;
+}
+
+console.log('sumDouble');
+console.log(sumDouble(1, 2)); // 3
+console.log(sumDouble(3, 2)); // 5
+console.log(sumDouble(2, 2)); // 8
 /***********************************************************************************************/
 //We have a loud talking parrot. The "hour" parameter is the current hour 
 //time in the range 0..23. We are in trouble if the parrot is talking 
@@ -49,13 +79,15 @@ console.log(sumDouble(2, 2)); // 8
 // Van egy papagájunk a hour a valós idő, ha 7 óra előtt vagy 20 óra után beszél bajban vagyunk.
 
 function parrotTrouble(talking, hour) {
-
-
+    // Ellenőrizzük, hogy a papagáj beszél-e, és hogy az óra 7 előtt vagy 20 után van-e
+    return talking && (hour < 7 || hour > 20);
 }
+
 console.log('parrotTrouble');
 console.log(parrotTrouble(true, 6)); // true
 console.log(parrotTrouble(true, 7)); // false
 console.log(parrotTrouble(false, 6)); // false
+
 
 /***********************************************************************************************/
 //Given 2 values, return true if one is negative and one is positive. 
