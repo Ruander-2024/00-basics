@@ -5,8 +5,13 @@
 
 
 function sleepIn(weekday, vacation) {
-
-
+    if (!weekday) { // Ha nem hétköznap van
+        return true;
+    } else if (vacation) { // Ha vakáción vagyunk
+        return true;
+    } else { // Ha hétköznap van és nem vagyunk vakáción
+        return false;
+    }
 }
 
 console.log(sleepIn(false, false)); // true
@@ -21,10 +26,15 @@ console.log(sleepIn(false, true)); // true
 //Van két majmunk ha mindkettő mosolyog vagy egyik sem akkor bajban vagyunk (true), különben (false).
 
 function monkeyTrouble(aSmile, bSmile) {
-
-
-
+    if (aSmile && bSmile) { // Ha mindkét majom mosolyog
+        return true;
+    } else if (!aSmile && !bSmile) { // Ha egyik majom sem mosolyog
+        return true;
+    } else { // Ha az egyik mosolyog, a másik nem
+        return false;
+    }
 }
+
 console.log('monkeyTrouble');
 console.log(monkeyTrouble(true, true)); // true
 console.log(monkeyTrouble(false, false)); // true
@@ -35,8 +45,13 @@ console.log(monkeyTrouble(true, false)); // false
 //then return double their sum.
 
 function sumDouble(a, b) {
-
+    if (a === b) { // Ha a két érték megegyezik
+        return 2 * (a + b); // Dupla összeg
+    } else { // Ha nem egyeznek meg
+        return a + b; // Csak az összeg
+    }
 }
+
 console.log('sumDouble');
 console.log(sumDouble(1, 2)); // 3
 console.log(sumDouble(3, 2)); // 5
@@ -49,9 +64,13 @@ console.log(sumDouble(2, 2)); // 8
 // Van egy papagájunk a hour a valós idő, ha 7 óra előtt vagy 20 óra után beszél bajban vagyunk.
 
 function parrotTrouble(talking, hour) {
-
-
+    if (talking && (hour < 7 || hour > 20)) { // Ha a papagáj beszél, és az idő 7 előtt vagy 20 után van
+        return true; // Bajban vagyunk
+    } else { // Ha nem beszél a papagáj, vagy az idő 7 és 20 között van
+        return false; // Nem vagyunk bajban
+    }
 }
+
 console.log('parrotTrouble');
 console.log(parrotTrouble(true, 6)); // true
 console.log(parrotTrouble(true, 7)); // false
@@ -62,8 +81,11 @@ console.log(parrotTrouble(false, 6)); // false
 //Except if the parameter "negative" is true, then return true only if both are negative.
 
 function posNeg(a, b, negative) {
-
-
+    if (negative) { // Ha a "negative" paraméter igaz
+        return a < 0 && b < 0; // Akkor mindkét számnak negatívnak kell lennie
+    } else { // Ha a "negative" paraméter hamis
+        return (a < 0 && b > 0) || (a > 0 && b < 0); // Az egyik szám legyen negatív, a másik pozitív
+    }
 }
 
 console.log('posNeg');
@@ -77,8 +99,11 @@ console.log(posNeg(-4, -5, true)); // true
 //Use the % "mod" operator
 
 function or35(number) {
-
-
+    if (number % 3 === 0 || number % 5 === 0) { // Ha a szám osztható 3-mal vagy 5-tel
+        return true; // Akkor igaz
+    } else { // Ha egyik sem igaz
+        return false; // Akkor hamis
+    }
 }
 
 console.log('or35');
