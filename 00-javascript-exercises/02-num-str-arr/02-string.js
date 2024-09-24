@@ -2,7 +2,12 @@
 //However, if the string already begins with "not", return the string unchanged.
 
 function checkString(str) {
-
+    if(str.startsWith('not')){
+        return str;
+    }
+    else{
+        return 'not' + str;
+    }
 }
 console.log("checkString");
 console.log(checkString('candy')); // "not candy"
@@ -15,7 +20,10 @@ console.log(checkString('not bad')); // "not bad"
 //in the original string (i.e. n will be in the range 0..str.length()-1 inclusive).
 
 function missChar(str, n){
-
+    if(n < 0 || n >= str.length){
+        return str;
+    }
+    return str.slice(0, n) + str.slice(n + 1);
 }
 
 console.log(missChar("kitten", 1)); // "ktten"
@@ -27,8 +35,27 @@ console.log(missChar("kitten", 4)); //"kittn"
 
 
 function changeFrontBack(str) {
-
+    if(str.length === 1){
+        return str;
+    }
+    else {
+        return str[str.length -1 ] + str.slice(1, str.length -1 ) + str[0]
+    }
 }
+console.log();
+
+function changeFrontBack(str){
+    let first=str[0]; //c/a/a
+    let last=str.slice(str.length-1);  // e/a/b
+    let koz=str.slice(1,-1);  // od/a/b
+    if(str.length < 2){
+        return str;
+    }
+    else{
+        return last + koz + first
+    }
+}
+
 
 console.log('changeFrontBack');
 console.log(changeFrontBack("code")); // "eodc"
@@ -41,7 +68,11 @@ console.log(changeFrontBack("ab")); // "ba"
 //Return a new string which is 3 copies of the front.
 
 function firstThree(str) {
-
+    if(str.length < 3){
+        return str;
+    }
+    
+    let firstThree = str.substring(0, 3);
 }
 
 console.log('firstThree');
@@ -55,7 +86,8 @@ console.log(firstThree("abc")); // "abcabcabc"
 //The original string will be length 1 or more.
 
 function lastToFront(str) {
-
+    let last = str.slice(str.length - 1);   // let last = str[str.length-1]  substring is jó
+    return last + str + last;
 }
 
 console.log(lastToFront("cat")); // "tcatt"
@@ -67,7 +99,13 @@ console.log(lastToFront("a")); // "aaa"
 //so "xxx" contains 2 "xx".
 
 function findXX(str) {
-
+    let matches = str.match(/(?=xx)/gi)
+    return matches ? matches.length : 0;
+    if(matches){
+        return matches.length;
+    }else{
+        return 0;
+    }
 }
 
 console.log(findXX("abcxx")); // 1
@@ -79,7 +117,48 @@ console.log(findXX("xxxx")); // 3
 //the first, so "Hello" yields "Hlo".
 
 function stringBits(str) {
+    return str.split('').filter((karakter, index) => index % 2 === 0).join('');
+}
+console.log();
 
+function stringBits(str){
+    let result = "";
+    // Végigmegyünk a karakterláncon
+    for(let i = 0; i < str.length; i++){
+        //Ellenőrizzük, hogy az index páros-e
+        if(i % 2 === 0){
+            result += str[i]; // Hozzáadjuk a karaktert az új karakterlánchoz, ha páros az index
+        }
+    }
+    return result;  // Visszatérünk az új karakterlánccal
+}
+console.log();
+function stringBits(str) {
+    let i = 0;
+    let result = '';
+
+    while(i < str.length){
+        result += str[i];
+    }
+    return result;
+}
+console.log();
+
+function stringBits(str) {
+    let result = "";
+    for (let i = 0; i < str.length; i += 2) {
+    result += str[i];
+    }
+    return result;
+    }
+console.log();
+
+function stringBits(str) {
+let result = "";
+for (let i = 0; i < str.length; i++) {
+result += str.slice(0, i + 1);
+}
+return result;
 }
 
 console.log(stringBits("Hello")); //"Hlo"
@@ -89,10 +168,18 @@ console.log(stringBits("Heeololeo")); //"Hello"
 /***********************************************************************************************/
 //Given a non-empty string like "Code" return a string like "CCoCodCode".
 
-function concatString(str) {
 
+function concatString(str){
+    let egy = str[0];
+    let ketto = str.slice(0,2);
+    let harom = str.slice(0,3);
+    if(str.length > 3){
+    return egy + ketto + harom + str;}
+    else if (str.length > 2){
+    return egy + ketto + str;
+    }
+    return egy + str;
 }
-
 console.log(concatString("Code")); // "CCoCodCode"
 console.log(concatString("abc")); // "aababc"
 console.log(concatString("ab")); // "aab"
@@ -101,8 +188,22 @@ console.log(concatString("ab")); // "aab"
 //Given a string, return a version where all the "x" have been removed. 
 //Except an "x" at the very start or end should not be removed.
 
-function findX(str) {
 
+function findX(str) {
+    let result = '';
+    for(let i = 1; i < str.length - 1; i++){
+        if(str[i] !== 'x'){
+            result += str[i];
+        }
+    }
+    return str[0] + result + str[str.length - 1];
+}
+
+function findX(str){
+    let valami = str[0]
+    let valami2 = str[str.length -1]
+
+    return valami + str.slice(1, str.length- 1).replace(/x/g, '')+ valami2
 }
 
 console.log(findX("xxHxix")); // "xHix"

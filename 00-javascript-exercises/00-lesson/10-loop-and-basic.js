@@ -321,7 +321,7 @@ console.log();
 
 let index4 = 0;
 
-while(userName[index4] -1 !== ' '){
+while(userName[index4] !== ' '){
     console.log(userName[index4]);
     index4++;
 }
