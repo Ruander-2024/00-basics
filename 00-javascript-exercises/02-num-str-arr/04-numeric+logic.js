@@ -164,8 +164,34 @@ console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
 
 
 function checkSimilarList(list1, list2) {
-
+    // Ellenőrizzük, hogy a listák mérete megegyezik-e                                                      // Gipi
+    if ((list1.length === list2.length && list1[0] === list2[0]) || 
+        (list1.length === list2.length && list1[list1.length - 1] === list2[list2.length - 1])) {
+        return 'similar';  // Ha bármelyik feltétel igaz, akkor 'similar'
+    } else {
+        return 'not similar';  // Ha egyik feltétel sem igaz, akkor 'not similar'
+    }
 }
+
+
+
+// if ((list1.length === list2.length && list1[list1.length - 1] === list2[list2.length - 1]) ||                 // Eszti 
+// (list1[0] === list2[0])) {
+// return 'similar';
+// } else {
+// return 'not similar';
+// }
+
+
+{
+    if ( list1.length == list2.length && list1[0] === list2[0] || list1.length === list2.length && list1[list1.length -1] === list2[ list2.length -1]){
+    return similar
+    }else {
+    return not
+    }
+    
+    
+    }
 
 console.log(checkSimilarList([1, 4, 11], [1, 3, 13]));
 console.log(checkSimilarList([4, 4, 32], [4, 32]));
