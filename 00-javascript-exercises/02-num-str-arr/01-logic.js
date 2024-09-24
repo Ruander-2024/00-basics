@@ -109,7 +109,7 @@ console.log(posNeg(-4, -5, true)); // true
 //Use the % "mod" operator
 
 function or35(number) {
-
+    return number % 3 === 0 || number % 5 === 0;
 
 }
 
@@ -124,7 +124,9 @@ console.log(or35(8)); // false
 //If the string length is less than 2, use whatever chars are there.
 
 function front22(str) {
-
+if(str.length < 2){
+    return word
+}
 
 }
 console.log('front22');
@@ -136,22 +138,27 @@ console.log(front22("abc")); // "ababcab"
 //Given two temperatures, return true if one is less than 0 and the other is greater than 100.
 
 function icyHot(temp1, temp2) {
-
-
+    // Ellenőrizzük, hogy az egyik hőmérséklet kisebb-e mint 0 és a másik nagyobb-e mint 100
+    return (temp1 < 0 && temp2 > 100) || (temp1 > 100 && temp2 < 0);
 }
+
+// Tesztek
 console.log('icyHot');
 console.log(icyHot(120, -1)); // true
 console.log(icyHot(-1, 120)); // true
-console.log(icyHot(2, 120)); // false
+console.log(icyHot(2, 120));  // false
 
 /***********************************************************************************************/
 //We'll say that a number is "teen" if it is in the range 13..19 inclusive. 
 //Given 3 values, return true if 1 or more of them are teen.
 
-function isTeen(a, b, c) {
-
+function tiniE(a, b, c) {
+    // Ellenőrizzük, hogy valamelyik szám a, b vagy c 13 és 19 között van-e
+    return (a >= 13 && a <= 19) || (b >= 13 && b <= 19) || (c >= 13 && c <= 19);
 }
-console.log('isTeen');
-console.log(isTeen(13, 20, 10)); // true
-console.log(isTeen(20, 19, 10)); // true
-console.log(isTeen(20, 10, 13)); // true
+
+// Tesztesetek
+console.log('tiniE');
+console.log(tiniE(13, 20, 10)); // true
+console.log(tiniE(20, 19, 10)); // true
+console.log(tiniE(20, 10, 13)); // true
