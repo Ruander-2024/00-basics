@@ -164,8 +164,40 @@ console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
 
 
 function checkSimilarList(list1, list2) {
-
+    if (list1.length === list2.length && list1[list1.length - 1] === list2[list2.length - 1] || list1[0] === list2[0]) {
+return 'similar';
+} else {
+return 'not similar';
 }
+}
+
+function checkSimilarList(list1, list2) {
+    if (list1.length === list2.length && (list1[0] === list2[0] || list1[list1.length - 1] === list2[list2.length - 1])) {
+    return 'similar';
+    }
+    else
+    {
+    return 'not similar';
+    }
+    
+    }
+
+function checkSimilarList(list1, list2) {
+    if ( list1.length == list2.length && list1[0] === list2[0] || list1.length === list2.length && list1[list1.length -1] === list2[ list2.length -1]){
+    return 'similar';
+    }else {
+    return 'not similar';
+    }
+    
+    
+    }
+
+function checkSimilarList(list1, list2) {
+    if( list1.length === list2.length && list1[0] === list2[0] && list1[0] || list1.length === list2.length && list1.slice(list1.length -1) && list2.slice(list2.length -1)){
+    return 'similar';
+    }
+    else return 'not similar';
+    }
 
 console.log(checkSimilarList([1, 4, 11], [1, 3, 13]));
 console.log(checkSimilarList([4, 4, 32], [4, 32]));
