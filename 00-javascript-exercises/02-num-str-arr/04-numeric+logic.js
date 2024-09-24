@@ -5,15 +5,17 @@
 // Használnunk kell a "modulo osztást", jele a '%' : példa: 5 % 2     // Output: 1
 // Sima osztás eredménye egész számra "kerekítődik": példa: 7 / 2    //Output 3
 
-//console.log(checkNumberIsEven(3))             //Output: false
-//console.log(checkNumberIsEven(4))             //Output: true
 function checkNumberIsEven(num) {
-
+    // Visszaadja az igaz (true) értéket, ha a szám páros, hamis (false) értéket, ha páratlan
+    return num % 2 === 0;
 }
-console.log(checkNumberIsEven(10));
-console.log(checkNumberIsEven(7));
-console.log(checkNumberIsEven(45));
 
+// Teszt esetek
+console.log(checkNumberIsEven(10)); // Kimenet: true
+console.log(checkNumberIsEven(7));  // Kimenet: false
+console.log(checkNumberIsEven(45)); // Kimenet: false
+console.log(checkNumberIsEven(4));  // Kimenet: true
+console.log(checkNumberIsEven(3));  // Kimenet: false
 
 // FELADAT: Vizsgáld meg, hogy egy szám osztható-e maradék nélkül 2-vel vagy 3-al
 //ha egyikkel sem, írja ki 'false'
@@ -164,10 +166,18 @@ console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
 
 
 function checkSimilarList(list1, list2) {
-
+    // Ellenőrizzük, hogy a méretek egyenlőek-e, és ha az első elemek egyenlőek
+    // vagy ha a méretük megegyezik és az utolsó elemek egyenlőek
+    if ((list1.length === list2.length && list1[list1.length - 1] === list2[list2.length - 1]) || 
+        (list1[0] === list2[0])) {
+        return 'similar';
+    } else {
+        return 'not similar';
+    }
 }
 
-console.log(checkSimilarList([1, 4, 11], [1, 3, 13]));
-console.log(checkSimilarList([4, 4, 32], [4, 32]));
-console.log(checkSimilarList([9, 4, 11], [4, 3, 23, 11]));
-console.log(checkSimilarList([9, 4, 11, 6], [4, 3, 23, 6]));
+
+console.log(checkSimilarList([1, 4, 11], [1, 3, 13])); // Kimenet: 'similar'
+console.log(checkSimilarList([4, 4, 32], [4, 32]));    // Kimenet: 'not similar'
+console.log(checkSimilarList([9, 4, 11], [4, 3, 23, 11])); // Kimenet: 'not similar'
+console.log(checkSimilarList([9, 4, 11, 6], [4, 3, 23, 6])); // Kimenet: 'similar'
