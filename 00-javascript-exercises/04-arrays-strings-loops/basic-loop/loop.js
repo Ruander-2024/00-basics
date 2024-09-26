@@ -7,9 +7,17 @@
 // Output: ["F", "o", "r", "g", "i", "v", "e", "n", "e", "s", "s"]
 
 function charsIntoArray(myStr) {
-
+    let charArray = [];
+    for(let i = 0; i < myStr.length; i++){
+        charArray.push(myStr[i]);
+    }
+    return charArray;
 
 }
+
+console.log(charsIntoArray("Forgiveness"))
+
+console.log()
 
 //-------------------------- MÁSODIK FELADAT ------------------------------------------
 //
@@ -20,9 +28,30 @@ function charsIntoArray(myStr) {
 // Output: 3
 
 function charCounter(myStr, myChar) {
+    let count = 0;
+    if (myStr.length < 15){
+        return 
+    }
 
+    for (let i = 0; i < myStr.length; i++) {
+        // Ha az aktuális karakter megegyezik a keresett karakterrel, növeljük a számlálót
+        if (myStr[i] === myChar) {
+          count++;
+        }
+      }
+
+    if (count > 0) {
+        console.log(`A "${myChar}" karakter ${count} alkalommal szerepel a ${myStr} szövegben.`)
+    }
+    else{
+        console.log(`A "${myChar}" karakter nem szerepel a stringben.`)
+    }
 
 }
+
+console.log(charCounter("O, World, hold on", "o"))
+
+console.log()
 
 //-------------------------- HARMADIK FELADAT ------------------------------------------
 //
@@ -32,9 +61,17 @@ function charCounter(myStr, myChar) {
 // Output: ["APPLE", "WINDOWS", "LINUX"]
 
 function getUpper(myArr) {
-
+    let upperArray = [];
+    for(let i = 0; i < myArr.length; i++){
+        upperArray.push(myArr[i].toUpperCase());
+    }
+    return upperArray;
 
 }
+
+console.log(getUpper(["Apple", "Windows", "Linux"]))
+
+console.log()
 
 //-------------------------- NEGYEDIK FELADAT ------------------------------------------
 //
@@ -51,6 +88,8 @@ function searchWord(sentences, myWord) {
 
 
 }
+
+console.log()
 
 //-------------------------- ÖTÖDIK FELADAT ------------------------------------------
 //
@@ -69,6 +108,8 @@ function advancedRepeater(myStr) {
 
 }
 
+console.log()
+
 //-------------------------- HATODIK FELADAT ------------------------------------------
 //
 // Adott egy legalább 3 szavas mondat a paraméterben, szóközönként tördeld el, és az így kapott szavakat tedd egy
@@ -81,6 +122,8 @@ function bigThirdWord(myStr) {
 
 
 }
+
+console.log()
 
 //-------------------------- HETEDIK FELADAT ------------------------------------------
 //
@@ -100,6 +143,8 @@ function reverseBonus(myStr) {
 
 }
 
+console.log()
+
 //-------------------------- NYOLCADIK FELADAT ------------------------------------------
 //
 // Adott egy számokból álló tömb, keresd ki LEGNAGYOBB értéket, majd térj vissza vele.
@@ -112,6 +157,8 @@ function searchMax(myNums) {
 
 }
 
+console.log()
+
 //-------------------------- KILENCEDIK FELADAT ------------------------------------------
 //
 // Adott egy számokból álló tömb, keresd ki LEGKISEBB értéket, majd térj vissza vele.
@@ -123,6 +170,8 @@ function searchMin(myNums) {
 
 
 }
+
+console.log()
 
 //-------------------------- TIZEDIK FELADAT ------------------------------------------
 //
@@ -140,6 +189,8 @@ function isAscending(myNums) {
 
 }
 
+console.log()
+
 //-------------------------- TIZENEGYEDIK FELADAT ------------------------------------------
 //
 // Adott egy számokból álló tömb, vizsgáld meg a tömb elemeit, majd térj vissza true-val ha
@@ -156,6 +207,8 @@ function isDescending(myNums) {
 
 }
 
+console.log()
+
 //-------------------------- TIZENEGYEDIK FELADAT ------------------------------------------
 //
 // Adott egy számokból álló tömb, add össze az elemeit, majd térj vissza az így kapott számmal.
@@ -168,6 +221,8 @@ function sumAll(myNums) {
 
 }
 
+console.log()
+
 //-------------------------- TIZENKETTEDIK FELADAT ------------------------------------------
 //
 // Adott egy számokból álló tömb, vizsgáld meg az elemeit, majd a PÁROS számokat rendezd új tömbbe és irasd ki.
@@ -179,6 +234,8 @@ function gatherEvens(myNums) {
 
 
 }
+
+console.log()
 
 //-------------------------- TIZENHARMADIK FELADAT ------------------------------------------
 //
