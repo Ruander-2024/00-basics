@@ -34,9 +34,15 @@ console.log(firstLast6([13, 6, 1, 2, 3])); // false
 /***********************************************************************************************/
 //Given an array of numbers, return true if the array is length 1 or more, 
 //and the first element and the last element are equal.
+console.log();
 
 function sameFirstLast(nums) {
-
+    if(nums.length >= 1 && nums[0] === nums[nums.length-1]){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 console.log(sameFirstLast([1, 2, 3])); // false
@@ -45,6 +51,7 @@ console.log(sameFirstLast([1, 2, 1])); // true
 
 /***********************************************************************************************/
 //Return an array length 3 containing the first 3 digits of pi, {3, 1, 4}.
+console.log();
 
 function makePi() {
 
@@ -55,9 +62,15 @@ console.log(makePi()); // [3, 1, 4]
 /***********************************************************************************************/
 //Given 2 arrays of numbers, a and b, return true if they have the same 
 //first element or they have the same last element. Both arrays will be length 1 or more.
+console.log();
 
 function sameStartEnd(a, b) {
-
+    if(a[0] === b[0] || a[a.length-1] === b[b.length-1]){
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 console.log(sameStartEnd([1, 2, 3], [7, 3])); // true
