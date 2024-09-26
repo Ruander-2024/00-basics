@@ -5,15 +5,28 @@
 // Használnunk kell a "modulo osztást", jele a '%' : példa: 5 % 2     // Output: 1
 // Sima osztás eredménye egész számra "kerekítődik": példa: 7 / 2    //Output 3
 
-//console.log(checkNumberIsEven(3))             //Output: false
-//console.log(checkNumberIsEven(4))             //Output: true
-function checkNumberIsEven(num) {
+// console.log(checkNumberIsEven(3))             //Output: false
+// console.log(checkNumberIsEven(4))             //Output: true
 
-}
+function checkNumberIsEven(num) {                                   // Gipi
+    return num % 2 === 0;
+  }
+
+// function checkNumberIsEven(num) {                                   // Márk
+//     if(num % 2 != 0){
+//         return false;
+//     }
+//     else{
+
+//     }
+        
+// }
+
 console.log(checkNumberIsEven(10));
 console.log(checkNumberIsEven(7));
 console.log(checkNumberIsEven(45));
 
+console.log()
 
 // FELADAT: Vizsgáld meg, hogy egy szám osztható-e maradék nélkül 2-vel vagy 3-al
 //ha egyikkel sem, írja ki 'false'
@@ -25,14 +38,24 @@ console.log(checkNumberIsEven(45));
 //console.log(checkNumberDivisionByTwoOrThree(7))       Output: 'false' (szöveggel)
 //console.log(checkNumberDivisionByTwoOrThree(9))       Output: 9
 
-function checkNumberDivisionByTwoOrThree(num) {
-
+function checkNumberDivisionByTwoOrThree(num) {                 //Aliz
+    if(num % 2 === 0 && num % 3 === 0){
+        return 'both';
+        }
+    else if(num % 2 === 0 || num % 3 === 0){
+        return num;
+        }
+    else if(num % 2 !== 0 && num % 3 !== 0){
+        return 'false';
+        }
 
 }
 console.log(checkNumberDivisionByTwoOrThree(2))
 console.log(checkNumberDivisionByTwoOrThree(6))
 console.log(checkNumberDivisionByTwoOrThree(7))
 console.log(checkNumberDivisionByTwoOrThree(9))
+
+console.log()
 
 //FELADAT: Adjon össze két számot, de csak akkor ha egyik sem kisebb mint nulla.
 //Ha van köztük negativ szám akkor térjen vissza 'false' értékkel
@@ -47,13 +70,18 @@ console.log(checkNumberDivisionByTwoOrThree(9))
 //Output: false
 
 function addTwoPositivNumber(num1, num2) {
-
-}
-
+    // Ellenőrizzük, hogy mindkét szám pozitív-e
+    if (num1 > 0 && num2 > 0) {
+      return num1 + num2; // Visszatérünk az összeadott értékkel
+    } else {
+      return false; // Ha bármelyik szám nem pozitív, false-t adunk vissza
+    }
+  }
 console.log(addTwoPositivNumber(2, -4));
 console.log(addTwoPositivNumber(2, 4));
 console.log(addTwoPositivNumber(-2, -4));
 
+console.log()
 
 //FELADAT: Vizsgálja meg hogy a kapott két paraméter között van e páratlan szám?
 
@@ -65,11 +93,15 @@ console.log(addTwoPositivNumber(-2, -4));
 //Output: false (boolean tipusu visszatérés)
 
 function getOddNumber(num1, num2) {
+    // Ellenőrizzük, hogy az egyik szám páratlan-e
+    return num1 % 2 !== 0 || num2 % 2 !== 0; // Visszatérünk true-val, ha bármelyik szám páratlan
+  }
 
-}
 console.info('getOddnumber');
 console.log(getOddNumber(3, 6));
 console.log(getOddNumber(8, 2));
+
+console.log()
 
 //FELADAT: egy két-vagy-három elemű listából írja ki a harmadik számjegyét.
 //Ha két számjegyű a lista, akkor adj hozzá egy 0-át, hogy biztosan legyen benne 3 érték.
@@ -83,11 +115,33 @@ console.log(getOddNumber(8, 2));
 //Output: 0
 //Output: 11
 
-function printThirdNumber(list) {
+// function printThirdNumber(list) {                        //Gipi
+//   // Ha a lista hossza 2, adjunk hozzá egy 0-t
+//   if (list.length === 2) {
+//     list.push(0);
+//   }
+  
+//   // A harmadik számjegy kiírása (index 2)
+//   return list[2];
+// }
+
+function printThirdNumber(list) {                   //Márk
+    if (list.length < 3){
+        list.push(0);
+        return list.pop();        
+    }
+    else{
+        return list.pop();
+    }
+
 }
+
+
 console.info('printThirdNumber');
 console.log(printThirdNumber([3, -5]));
 console.log(printThirdNumber([4, 6, 11]));
+
+console.log()
 
 //FELADAT: írj ki minden értéket egy listából.
 //Megjegyzés a for ciklussal lehet valami vizsgálatot, tevékenységet ciklikusan csinálni:
@@ -106,9 +160,13 @@ console.log(printThirdNumber([4, 6, 11]));
 //        1
 
 function printAllNumberFromList(list) {
-
+    for(let i = 0; i < list.length; i++){
+        console.log(list[i]);
+        }
 }
 console.log(printAllNumberFromList([3, 2, 1]));
+
+console.log()
 
 //Feladat írd ki fordított sorrendben a számokat
 //Megjegyzés az index induláskor nem csak 0 vagy 1 lehet. Illetve a ciklusban nem csak nővelni,
@@ -120,20 +178,34 @@ console.log(printAllNumberFromList([3, 2, 1]));
 //                                                          4
 //                                                          2
 function printReverse(list2) {
-
+    for(let i = list2.length - 1; i >= 0; i--){ //1. A ciklus kezdete a list2 végére van állítva, onnan indul.
+        //A loop pedig addig tart visszafelé, amíg az i nagyobb v. egyenlő, mint 0. index.
+        //2. Az i indexet minden körben 1-gyel csökkentjük (i--),
+        //így tesszük lehetővé, hogy fordított sorrendben haladjunk a listán.
+        //3. A cikluson belül a console.log(list2[i]) fordított sorrendben adja vissza az egyes elemeket.
+        console.log(list2[i]);
+        }
 }
 console.info('printReverse');
 console.log(printReverse([2, 4, 6]));
 
+console.log()
+
 //FELADAT Készíts egy üres listát és egy másik kapott lista minden második számjegyét
-//rakd bele. Logózd ki az új listádat
+//rakd bele. Logold ki az új listádat
 
 //Output:[2,44]
 
 function printEvenNums(list) {
-
+    let newList = [];
+    for(let i = 1; i < list.length - 1; i+= 2){
+        newList.push(list[i])
+    }
+    return newList;
 }
 console.log(printEvenNums([21, 2, 3, 44, 5]));
+
+console.log()
 
 
 //FELADAT kapsz két listát, hasonlitsd össze őket, és írd ki a nagyobb lista méretének értékét
@@ -143,10 +215,15 @@ console.log(printEvenNums([21, 2, 3, 44, 5]));
 //Output: 3
 
 function printBiggerListSize(list1, list2) {
-
-}
+    if(list1.length > list2.length || list1.lenght == list2.length){
+    return list1.length;
+    }
+    return list2.length;
+    }
 console.log(printBiggerListSize([3, 2, 1], [false, 4, 7, 8]));
 console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
+
+console.log()
 
 
 //FELADAT kapsz két listát, ha egyenlő a méretűk és az első számjegyük vagy a méretük és az utolsó számjegyük,
