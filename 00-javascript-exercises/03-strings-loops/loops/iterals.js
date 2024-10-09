@@ -3,6 +3,7 @@ console.log(' ---------------- get sum Of Array is even -----------');
 // Készíts egy metódust, ami megnézni, hogy egy tömb elemeinek összege páros-e?
 // Adja vissza a megfelelő boolean értéket
 
+
 // console.log(sumOfArrayIsEven([22, 4, 20, 0, 14])); // Output: true;
 // console.log(sumOfArrayIsEven([9, 11, 11])); // Output: false;
 // console.log(sumOfArrayIsEven([])); //Output:  false;
@@ -42,10 +43,18 @@ console.log(' ---------------- count invalid characters -------------');
 // Készíts egy metódust, ami megszámolja mennyi érvénytelen karakter van egy stringben
 // Az érvénytelen karakterek: '@', '#', '$'
 
-// console.log(countInvalidCahracters('@klléldsa>')); // Output: 1;
-// console.log(countInvalidCahracters('admin@80#test$')); // Output: 3;
-// console.log(countInvalidCahracters('test')); // Output: 0;
-function countInvalidCahracters(str) {}
+console.log(countInvalidCahracters('@klléldsa>')); // Output: 1;
+console.log(countInvalidCahracters('admin@80#test$')); // Output: 3;
+console.log(countInvalidCahracters('test')); // Output: 0;
+function countInvalidCahracters(str) {
+  let invalidChar = 0; // Érvénytelen karakter
+  for(let i = 0; i < str.length; i++){
+      if(str[i].match(/[@#$]/gi)) { // g - global - globális | i - insensitive - kis-nagybetűt nem veszi figyelembe
+          invalidChar++;
+      }
+  }
+  return invalidChar;
+}
 
 console.log(' -------------- remove square from array -----------');
 
