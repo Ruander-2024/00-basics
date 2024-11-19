@@ -6,10 +6,13 @@
 // Sima osztás eredménye egész számra "kerekítődik": példa: 7 / 2    //Output 3
 
 function checkNumberIsEven(num) {
-    // Visszaadja az igaz (true) értéket, ha a szám páros, hamis (false) értéket, ha páratlan
-    return num % 2 === 0;
+    if(num % 2 != 0){
+        return false;
+    }
+    else{
+        return true;
+    }
 }
-
 // Teszt esetek
 console.log(checkNumberIsEven(10)); // Kimenet: true
 console.log(checkNumberIsEven(7));  // Kimenet: false
@@ -86,6 +89,13 @@ console.log(getOddNumber(8, 2));
 //Output: 11
 
 function printThirdNumber(list) {
+    if(list.length < 3){
+        list.push(0);
+        return list.pop();
+    }
+    else{
+        return list.pop();
+    }
 }
 console.info('printThirdNumber');
 console.log(printThirdNumber([3, -5]));
@@ -108,7 +118,9 @@ console.log(printThirdNumber([4, 6, 11]));
 //        1
 
 function printAllNumberFromList(list) {
-
+    for(let i = 0; i < list.length; i++){
+        console.log(list[i]);
+        }
 }
 console.log(printAllNumberFromList([3, 2, 1]));
 
@@ -145,10 +157,30 @@ console.log(printEvenNums([21, 2, 3, 44, 5]));
 //Output: 3
 
 function printBiggerListSize(list1, list2) {
+    let size1 = 0; 
+    let size2 = 0; 
 
+   
+    while (size1 < list1.length) {
+        size1++;
+    }
+
+   
+    while (size2 < list2.length) {
+        size2++;
+    }
+
+   
+    if (size1 >= size2) {
+        return size1; 
+    } else {
+        return size2;
+    }
 }
-console.log(printBiggerListSize([3, 2, 1], [false, 4, 7, 8]));
-console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));
+
+// Tesztelés
+console.log(printBiggerListSize([3, 2, 1], [false, 4, 7, 8])); // Output: 4
+console.log(printBiggerListSize([3, 2, 1], [false, 4, 8]));    // Output: 3
 
 
 //FELADAT kapsz két listát, ha egyenlő a méretűk és az első számjegyük vagy a méretük és az utolsó számjegyük,

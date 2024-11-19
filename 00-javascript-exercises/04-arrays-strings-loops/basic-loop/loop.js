@@ -7,9 +7,22 @@
 // Output: ["F", "o", "r", "g", "i", "v", "e", "n", "e", "s", "s"]
 
 function charsIntoArray(myStr) {
-
-
+    // Létrehozunk egy üres tömböt
+    let charArray = [];
+    
+    // Végigiterálunk a bemeneti string minden karakterén
+    for (let i = 0; i < myStr.length; i++) {
+        // Hozzáadjuk az aktuális karaktert a tömbhöz
+        charArray.push(myStr[i]);
+    }
+    
+    // Visszatérünk a feltöltött tömbbel
+    return charArray;
 }
+
+// Teszteljük a funkciót
+console.log(charsIntoArray("Forgiveness")); // ["F", "o", "r", "g", "i", "v", "e", "n", "e", "s", "s"]
+
 
 //-------------------------- MÁSODIK FELADAT ------------------------------------------
 //
@@ -20,9 +33,36 @@ function charsIntoArray(myStr) {
 // Output: 3
 
 function charCounter(myStr, myChar) {
+    // Ellenőrizzük, hogy a bemeneti string legalább 15 karakterből áll-e
+    if (myStr.length < 15) {
+        return "A stringnek legalább 15 karakterből kell állnia.";
+    }
 
+    // A megszámlálni kívánt karakterek számlálója
+    let count = 0;
 
+    // Végigiterálunk a string minden karakterén
+    for (let i = 0; i < myStr.length; i++) {
+       
+        if (myStr[i] === myChar) {
+            count++; // Növeljük a számlálót
+        }
+    }
+
+    // Ellenőrizzük, hogy találtunk-e a keresett karakterből
+    if (count > 0) {
+        console.log(`A "${myChar}" karakter ${count} alkalommal szerepel a stringben.`);
+    } else {
+        console.log(`A "${myChar}" karakter nem szerepel a stringben.`);
+    }
+
+    // Visszatérünk a karakterek számával
+    return count;
 }
+
+// Teszteljük a funkciót
+console.log(charCounter("O, World, hold on", "o")); // Output: 3
+
 
 //-------------------------- HARMADIK FELADAT ------------------------------------------
 //
@@ -32,9 +72,20 @@ function charCounter(myStr, myChar) {
 // Output: ["APPLE", "WINDOWS", "LINUX"]
 
 function getUpper(myArr) {
+    
+    let upperArr = [];
 
-
+   
+    for (let i = 0; i < myArr.length; i++) {
+     
+        upperArr.push(myArr[i].toUpperCase());
+    }
+return upperArr;
 }
+
+// Teszteljük a funkciót
+console.log(getUpper(["Apple", "Windows", "Linux"])); // Output: ["APPLE", "WINDOWS", "LINUX"]
+
 
 //-------------------------- NEGYEDIK FELADAT ------------------------------------------
 //
@@ -48,9 +99,33 @@ function getUpper(myArr) {
 // Output: [10, -1, 0, 38]
 
 function searchWord(sentences, myWord) {
+   
+    let positions = [];
 
+    
+    for (let i = 0; i < sentences.length; i++) {
+        
+        let index = sentences[i].indexOf(myWord);
+        
+        if (index === -1) {
+            positions.push(-1);
+        } else {
+            positions.push(index);
+        }
+    }
 
+    // Visszatérünk a pozíciókat tartalmazó tömbbel
+    return positions;
 }
+
+// Teszteljük a funkciót
+console.log(searchWord([
+    "I live in Hungary.",
+    "Do you like coffee?",
+    "Hungary is a nice country.",
+    "I go to visit my friend, who lives in Hungary."
+], "Hungary")); // Output: [10, -1, 0, 38]
+
 
 //-------------------------- ÖTÖDIK FELADAT ------------------------------------------
 //
